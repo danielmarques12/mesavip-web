@@ -1,6 +1,6 @@
 module.exports = {
   dialect: 'postgres',
-  host: 'localhost:5432',
+  host: 'localhost',
   username: 'postgres',
   password: 'mesavip-postgres',
   database: 'mesavip',
