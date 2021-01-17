@@ -3,10 +3,11 @@ import Sequelize from 'sequelize';
 import Cliente from '../app/models/Cliente';
 import Restaurante from '../app/models/Restaurante';
 import Agendamento from '../app/models/Agendamento';
+import Horario from '../app/models/Horario';
 
 import databaseConfig from '../config/database';
 
-const models = [Cliente, Restaurante, Agendamento];
+const models = [Cliente, Restaurante, Agendamento, Horario];
 
 class Database {
   constructor() {

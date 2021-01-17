@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('agendamentos', {
+    queryInterface.createTable('horarios', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -8,26 +8,11 @@ module.exports = {
         autoIncrement: true,
       },
       horario: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: false,
-      },
-      quantidade_pessoas: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      canceled_at: {
-        type: Sequelize.DATE,
-        allowNull: true,
       },
       restaurante_id: {
         references: { model: 'restaurantes', key: 'id' },
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-      },
-      cliente_id: {
-        references: { model: 'clientes', key: 'id' },
         type: Sequelize.INTEGER,
         allowNull: false,
         onUpdate: 'CASCADE',
@@ -43,5 +28,5 @@ module.exports = {
       },
     }),
 
-  down: (queryInterface) => queryInterface.dropTable('agendamentos'),
+  down: (queryInterface) => queryInterface.dropTable('horarios'),
 };
