@@ -1,6 +1,8 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   MDBContainer,
   MDBRow,
@@ -12,25 +14,16 @@ import {
 } from 'mdbreact';
 import { api } from '../../services/api';
 
-const clientes = {};
-
-function POST_cliente() {
-  return api.post('clientes', clientes);
+function POST_cliente(cliente) {
+  return api.post('clientes', cliente);
 }
 
-export default function LoginForm() {
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [cpf, setCPF] = useState('');
-  const [password, setPassword] = useState('');
+export default function LoginForm(props) {
+  const [cliente, setCliente] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    clientes.nome = nome;
-    clientes.email = email;
-    clientes.cpf = cpf;
-    clientes.password = password;
-    POST_cliente();
+    POST_cliente(cliente);
   };
 
   return (
@@ -40,35 +33,43 @@ export default function LoginForm() {
           <MDBCard>
             <MDBCardBody>
               <form onSubmit={handleSubmit}>
-                <p className="h4 text-center py-4">Sign up</p>
+                <p className="h4 text-center py-4">Quero criar uma conta</p>
                 <div className="grey-text">
                   <MDBInput
-                    value={nome}
-                    onChange={(event) => setNome(event.target.value)}
+                    value={cliente.nome}
+                    onChange={(event) =>
+                      setCliente({ ...cliente, nome: event.target.value })
+                    }
                     label="Nome"
                     group
                     type="text"
                     validate
                   />
                   <MDBInput
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
+                    value={cliente.email}
+                    onChange={(event) =>
+                      setCliente({ ...cliente, email: event.target.value })
+                    }
                     label="Email"
                     group
                     type="email"
                     validate
                   />
                   <MDBInput
-                    value={cpf}
-                    onChange={(event) => setCPF(event.target.value)}
+                    value={cliente.cpf}
+                    onChange={(event) =>
+                      setCliente({ ...cliente, cpf: event.target.value })
+                    }
                     label="CPF"
                     group
                     type="text"
                     validate
                   />
                   <MDBInput
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
+                    value={cliente.password}
+                    onChange={(event) =>
+                      setCliente({ ...cliente, password: event.target.value })
+                    }
                     label="Senha"
                     group
                     type="password"
@@ -77,7 +78,7 @@ export default function LoginForm() {
                 </div>
                 <div className="text-center py-4 mt-3">
                   <MDBBtn color="cyan" type="submit">
-                    Register
+                    Continuar
                   </MDBBtn>
                 </div>
               </form>
