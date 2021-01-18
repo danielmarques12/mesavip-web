@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "bootstrap-css-only": "^4.4.1",
     "font-awesome": "^4.7.0",
+    "formik": "^2.2.6",
     "mdbreact": "^5.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
