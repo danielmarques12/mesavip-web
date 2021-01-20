@@ -24,7 +24,7 @@ class SessionClienteController {
         name,
         email,
       },
-      token: jwt.sign({ id }, authConfig.secret, {
+      token: jwt.sign({ id, email }, authConfig.secret, {
         expiresIn: authConfig.expiresIn,
       }),
     });

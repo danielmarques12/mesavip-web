@@ -46,11 +46,10 @@ class HorarioController {
 
   async index(request, response) {
     const restaurante = await Restaurante.findOne({
-      where: { id: request.userId },
+      where: { email: request.userEmail },
     });
-    console.log(request.userId);
     if (!restaurante) {
-      return response.status(403).json({ error: Error });
+      return response.status(403).json({ error: '403 Forbidden' });
     }
 
     const horarios = await Horario.findAll({
