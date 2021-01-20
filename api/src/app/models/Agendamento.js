@@ -4,7 +4,7 @@ class Agendamento extends Model {
   static init(sequelize) {
     super.init(
       {
-        horario: Sequelize.DATE,
+        horario: Sequelize.STRING,
         quantidade_pessoas: Sequelize.INTEGER,
         cancelamento: Sequelize.DATE,
         restaurante_id: Sequelize.INTEGER,

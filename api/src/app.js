@@ -1,5 +1,6 @@
 import express from 'express';
 import Youch from 'youch';
+import cors from 'cors';
 import 'express-async-errors';
 
 import routes from './routes';
@@ -8,18 +9,19 @@ import './database';
 class App {
   constructor() {
     this.server = express();
-
     this.middlewares();
     this.routes();
     this.exceptionHandler();
   }
 
   routes() {
-    this.server.use(routes);
+    this.server.use('/', routes);
+    // this.routes.initialize(this.server);
   }
 
   middlewares() {
     this.server.use(express.json());
+    this.server.use(cors());
   }
 
   exceptionHandler() {
