@@ -12,7 +12,7 @@ module.exports = {
         allowNull: false,
       },
       restaurante_id: {
-        references: { model: 'restaurantes', key: 'id' },
+        references: { model: 'usuarios', key: 'id' },
         type: Sequelize.INTEGER,
         allowNull: false,
         onUpdate: 'CASCADE',

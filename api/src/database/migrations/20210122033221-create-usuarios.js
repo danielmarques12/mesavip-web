@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('restaurantes', {
+    queryInterface.createTable('usuarios', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -16,9 +16,14 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      cpf: {
+        type: Sequelize.STRING,
+        allowNull: true,
+        unique: true,
+      },
       cnpj: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
         unique: true,
       },
       password_hash: {
@@ -35,5 +40,5 @@ module.exports = {
       },
     }),
 
-  down: (queryInterface) => queryInterface.dropTable('restaurantes'),
+  down: (queryInterface) => queryInterface.dropTable('usuarios'),
 };

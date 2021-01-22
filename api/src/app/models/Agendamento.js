@@ -4,11 +4,11 @@ class Agendamento extends Model {
   static init(sequelize) {
     super.init(
       {
-        horario: Sequelize.STRING,
         quantidade_pessoas: Sequelize.INTEGER,
-        cancelamento: Sequelize.DATE,
-        restaurante_id: Sequelize.INTEGER,
+        cancelamento: Sequelize.BOOLEAN,
+        horario_id: Sequelize.INTEGER,
         cliente_id: Sequelize.INTEGER,
+        mesa_id: Sequelize.INTEGER,
       },
       { sequelize, tableName: 'agendamentos' }
     );
@@ -17,11 +17,7 @@ class Agendamento extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Cliente, { foreignKey: 'cliente_id', as: 'cliente' });
-    this.belongsTo(models.Restaurante, {
-      foreignKey: 'restaurante_id',
-      as: 'restaurante',
-    });
+    this.belongsTo(models.Usuario, { foreignKey: 'cliente_id', as: 'cliente' });
   }
 }
 

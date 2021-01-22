@@ -15,19 +15,22 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: true,
       },
-      horario: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      restaurante_id: {
-        references: { model: 'restaurantes', key: 'id' },
+      horario_id: {
+        references: { model: 'horarios', key: 'id' },
         type: Sequelize.INTEGER,
         allowNull: false,
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
       },
       cliente_id: {
-        references: { model: 'clientes', key: 'id' },
+        references: { model: 'usuarios', key: 'id' },
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+      },
+      mesa_id: {
+        references: { model: 'mesas', key: 'id' },
         type: Sequelize.INTEGER,
         allowNull: false,
         onUpdate: 'CASCADE',

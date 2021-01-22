@@ -1,29 +1,22 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('clientes', {
+    queryInterface.createTable('mesas', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        allowNull: false,
         autoIncrement: true,
-      },
-      nome: {
-        type: Sequelize.STRING,
         allowNull: false,
       },
-      email: {
-        type: Sequelize.STRING,
+      capacidade: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-        unique: true,
       },
-      cpf: {
-        type: Sequelize.STRING,
+      restaurante_id: {
+        references: { model: 'usuarios', key: 'id' },
+        type: Sequelize.INTEGER,
         allowNull: false,
-        unique: true,
-      },
-      password_hash: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
       },
       createdAt: {
         type: Sequelize.DATE,
@@ -35,5 +28,5 @@ module.exports = {
       },
     }),
 
-  down: (queryInterface) => queryInterface.dropTable('clientes'),
+  down: (queryInterface) => queryInterface.dropTable('mesas'),
 };

@@ -14,7 +14,7 @@ class Horario extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Restaurante, {
+    this.belongsTo(models.Usuario, {
       foreignKey: 'restaurante_id',
       as: 'restaurante',
     });

@@ -16,7 +16,6 @@ class App {
 
   routes() {
     this.server.use('/', routes);
-    // this.routes.initialize(this.server);
   }
 
   middlewares() {
