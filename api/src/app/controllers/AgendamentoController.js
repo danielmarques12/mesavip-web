@@ -1,9 +1,31 @@
 import {} from 'date-fns';
 import * as yup from 'yup';
 import Agendamento from '../models/Agendamento';
+import Usuario from '../models/Usuario';
 
 class AgendamentoController {
+  async index(request, response) {
+    const agendamentos = await Agendamento.findAll({
+      where: { cliente_id: request.userId },
+      attributes: ['id', 'quantidade_pessoas', 'horario_id', 'mesa_id'],
+    });
+
+    if (!agendamentos) {
+      return response.status(403).json({ error: '403 Forbidden' });
+    }
+
+    return response.json(agendamentos);
+  }
+
   async store(request, response) {
+    const restaurante = await Usuario.findOne({
+      where: { id: request.params.id, cpf: null },
+    });
+
+    if (!restaurante) {
+      return response.status(403).json({ error: 'Restaurante não existe' });
+    }
+
     const schema = yup.object().shape({
       horario_id: yup.string().required(),
       quantidade_pessoas: yup.number().required(),
@@ -18,6 +40,7 @@ class AgendamentoController {
       mesa_id: request.body.mesa_id,
       horario_id: request.body.horario_id,
       quantidade_pessoas: request.body.quantidade_pessoas,
+      cliente_id: request.userId,
     };
 
     const agendamento_indisponivel = await Agendamento.findOne({
@@ -39,9 +62,21 @@ class AgendamentoController {
   }
 
   async delete(request, response) {
-    const agendamento = await Agendamento.destroy(request.params.id);
+    const agendamento = await Agendamento.findOne({
+      where: { id: request.params.id },
+    });
 
-    return response.json(agendamento);
+    if (!agendamento) {
+      return response.status(401).json({ error: 'Agendamento não existe' });
+    }
+
+    await Agendamento.destroy({
+      where: {
+        id: request.params.id,
+      },
+    });
+
+    return response.json('Agendamento cancelado com sucesso!');
   }
 }
 
