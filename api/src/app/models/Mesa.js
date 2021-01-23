@@ -1,14 +1,16 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Horario extends Model {
+class Mesa extends Model {
   static init(sequelize) {
     super.init(
       {
-        horario: Sequelize.STRING,
+        capacidade: Sequelize.INTEGER,
       },
-      { sequelize, tableName: 'horarios' }
+      {
+        sequelize,
+        tableName: 'mesas',
+      }
     );
-
     return this;
   }
 
@@ -20,4 +22,4 @@ class Horario extends Model {
   }
 }
 
-export default Horario;
+export default Mesa;

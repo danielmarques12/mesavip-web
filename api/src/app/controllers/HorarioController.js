@@ -6,7 +6,7 @@ import Usuario from '../models/Usuario';
 class HorarioController {
   async store(request, response) {
     const restaurante = await Usuario.findOne({
-      where: { [Op.and]: [{ id: request.userId }, { cnpj: !null }] },
+      where: { [Op.and]: [{ id: request.userId }, { cpf: null }] },
     });
 
     if (!restaurante) {
@@ -32,16 +32,17 @@ class HorarioController {
       return response.status(400).json({ error: 'Horário já cadastrado' });
     }
 
-    await Horario.create(horario, restaurante_id);
+    await Horario.create({ horario, restaurante_id });
 
     return response.json({ horario, restaurante_id });
   }
 
   async index(request, response) {
-    const usuario = await Usuario.findOne({
-      where: { email: request.userEmail },
+    const restaurante = await Usuario.findOne({
+      where: { [Op.and]: [{ id: request.userId }, { cpf: null }] },
     });
-    if (!usuario) {
+
+    if (!restaurante) {
       return response.status(403).json({ error: '403 Forbidden' });
     }
 

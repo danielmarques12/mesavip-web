@@ -5,7 +5,6 @@ class Agendamento extends Model {
     super.init(
       {
         quantidade_pessoas: Sequelize.INTEGER,
-        cancelamento: Sequelize.BOOLEAN,
         horario_id: Sequelize.INTEGER,
         cliente_id: Sequelize.INTEGER,
         mesa_id: Sequelize.INTEGER,

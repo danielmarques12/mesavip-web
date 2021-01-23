@@ -16,13 +16,22 @@ class UsuarioController {
       return response.status(400).json({ error: 'Validação falhou' });
     }
 
-    const { email, cpf, cnpj } = request.body;
+    const { email } = request.body;
+
+    const forma_de_cadastro = request.body.cpf
+      ? request.body.cpf
+      : request.body.cnpj;
 
     const usuario_existe = await Usuario.findOne({
       where: {
         [Op.or]: [
-          { email, cpf },
-          { email, cnpj },
+          { email },
+          {
+            cpf: forma_de_cadastro,
+          },
+          {
+            cnpj: forma_de_cadastro,
+          },
         ],
       },
     });
