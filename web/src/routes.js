@@ -1,13 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Home from './pages/Home';
+import ClienteSignUp from './pages/ClienteSignUp';
+import RestauranteSignUp from './pages/RestauranteSignUp';
+import Restaurantes from './pages/Restaurantes';
+import Agendamento from './pages/Agendamento';
 
 function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path="/cliente-sign-up" component={ClienteSignUp} />
+        <Route path="/restaurante-sign-up" component={RestauranteSignUp} />
+        <Route path="/restaurantes" component={Restaurantes} />
+        <Route path="/restaurantes/:id" component={Agendamento} />
       </Switch>
     </BrowserRouter>
   );

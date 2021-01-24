@@ -15,7 +15,9 @@ import {
 import { api } from '../../services/api';
 
 function POST_cliente(cliente) {
-  return api.post('clientes', cliente);
+  return api.post('usuarios', cliente).then(() => {
+    window.location.href = '../restaurantes';
+  });
 }
 
 export default function LoginForm(props) {
