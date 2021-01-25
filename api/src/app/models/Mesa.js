@@ -19,6 +19,10 @@ class Mesa extends Model {
       foreignKey: 'restaurante_id',
       as: 'restaurante',
     });
+    this.hasMany(models.Agendamento, {
+      foreignKey: 'mesa_id',
+      as: 'agendamento',
+    });
   }
 }
 

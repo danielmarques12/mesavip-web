@@ -38,16 +38,9 @@ class HorarioController {
   }
 
   async index(request, response) {
-    const restaurante = await Usuario.findOne({
-      where: { [Op.and]: [{ id: request.userId }, { cpf: null }] },
-    });
-
-    if (!restaurante) {
-      return response.status(403).json({ error: '403 Forbidden' });
-    }
-
     const horarios = await Horario.findAll({
-      attributes: ['horario'],
+      where: { restaurante_id: request.params.id },
+      attributes: ['id', 'horario'],
     });
 
     return response.json(horarios);

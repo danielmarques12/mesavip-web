@@ -11,7 +11,9 @@ class HorarioRouter {
   }
 
   setRoutes() {
-    this.router.route('/horarios').get(authMiddleware, HorarioController.index);
+    this.router
+      .route('/restaurantes/:id/horarios/')
+      .get(HorarioController.index);
 
     this.router
       .route('/horarios')

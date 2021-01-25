@@ -14,6 +14,7 @@ class MesaRouter {
     // this.router.route('/mesas').get(authMiddleware, MesaController.index);
 
     this.router.route('/mesas').post(authMiddleware, MesaController.store);
+    this.router.route('/mesas').get(MesaController.MesasDisponiveis);
   }
 }
 

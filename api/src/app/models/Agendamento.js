@@ -17,6 +17,8 @@ class Agendamento extends Model {
 
   static associate(models) {
     this.belongsTo(models.Usuario, { foreignKey: 'cliente_id', as: 'cliente' });
+    this.belongsTo(models.Horario, { foreignKey: 'horario_id', as: 'horario' });
+    this.belongsTo(models.Mesa, { foreignKey: 'mesa_id', as: 'mesa' });
   }
 }
 
