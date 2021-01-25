@@ -18,6 +18,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/static-property-placement': 'off',
     'no-unused-vars': 'off',
+    'no-return-assign': 'off',
     camelcase: 'off',
   },
 };

@@ -12,7 +12,7 @@ function Routes() {
       <Switch>
         <Route path="/cliente-sign-up" component={ClienteSignUp} />
         <Route path="/restaurante-sign-up" component={RestauranteSignUp} />
-        <Route path="/restaurantes" component={Restaurantes} />
+        <Route exact path="/restaurantes" component={Restaurantes} />
         <Route path="/restaurantes/:id" component={Agendamento} />
       </Switch>
     </BrowserRouter>
