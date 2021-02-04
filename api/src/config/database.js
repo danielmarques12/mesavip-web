@@ -2,7 +2,7 @@ module.exports = {
   dialect: 'postgres',
   host: 'localhost',
   username: 'postgres',
-  password: 'mesavip-postgres',
+  password: 'mesavip',
   database: 'mesavip',
   define: {
     timestamps: true,

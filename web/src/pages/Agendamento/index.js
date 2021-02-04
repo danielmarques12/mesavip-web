@@ -17,10 +17,6 @@ export default function Agendamento({ match }) {
     });
   }
 
-  function handleSelectChange(horario) {
-    getMesas(horario);
-  }
-
   useEffect(() => {
     let mounted = true;
     getRestaurante(match.params.id).then((item) => {
@@ -34,12 +30,8 @@ export default function Agendamento({ match }) {
   return (
     <div>
       {/* Select com quantidade de pessoas */}
-      {/* Transformar isso num Componente?????? */}
 
-      <select
-        id="horarios"
-        onChange={(event) => handleSelectChange(event.target.value)}
-      >
+      <select id="horarios" onChange={(event) => getMesas(event.target.value)}>
         {horarios.map((horario) => (
           <option key={horario.id} value={horario.id}>
             {horario.horario}

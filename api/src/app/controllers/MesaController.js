@@ -36,12 +36,12 @@ class MesaController {
   async MesasDisponiveis(request, response) {
     const mesas_disponiveis = await db.connection.query(
       `SELECT m.id, m.capacidade
-      FROM mesas m
-      WHERE NOT EXISTS (
-          SELECT
-          FROM agendamentos a
-          WHERE a.mesa_id = m.id AND horario_id = :horario_id
-          );`,
+        FROM mesas m
+        WHERE NOT EXISTS (
+        SELECT
+        FROM agendamentos a
+        WHERE a.mesa_id = m.id AND horario_id = :horario_id
+      );`,
       {
         replacements: { horario_id: request.body.horario_id },
         type: db.connection.QueryTypes.SELECT,
