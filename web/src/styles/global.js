@@ -10,6 +10,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     min-height: 100%;
+    background: #222;
   }
 
   body, input, button {

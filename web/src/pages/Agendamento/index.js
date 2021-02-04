@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { api } from '../../services/api';
@@ -6,15 +7,19 @@ function getRestaurante(id) {
   return api.get(`restaurantes/${id}/horarios`);
 }
 
-function getMesas(horario) {
-  return api.get(`mesas`, { horario });
-}
-
 export default function Agendamento({ match }) {
   const [horarios, setHorarios] = useState([]);
   const [mesas, setMesas] = useState([]);
 
-  function handleSelectChange() {}
+  function getMesas(horario_id) {
+    return api.post(`mesas`, { horario_id }).then((response) => {
+      setMesas(response.data);
+    });
+  }
+
+  function handleSelectChange(horario) {
+    getMesas(horario);
+  }
 
   useEffect(() => {
     let mounted = true;
@@ -31,9 +36,12 @@ export default function Agendamento({ match }) {
       {/* Select com quantidade de pessoas */}
       {/* Transformar isso num Componente?????? */}
 
-      <select id="horarios" onChange={handleSelectChange()}>
+      <select
+        id="horarios"
+        onChange={(event) => handleSelectChange(event.target.value)}
+      >
         {horarios.map((horario) => (
-          <option key={horario.id} value={horario}>
+          <option key={horario.id} value={horario.id}>
             {horario.horario}
           </option>
         ))}
