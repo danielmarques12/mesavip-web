@@ -7,7 +7,7 @@ class AgendamentoController {
   async index(request, response) {
     const agendamentos = await Agendamento.findAll({
       where: { cliente_id: request.userId },
-      attributes: ['id', 'quantidade_pessoas', 'horario_id', 'mesa_id'],
+      attributes: ['id', 'horario_id', 'mesa_id'],
     });
 
     if (!agendamentos) {
@@ -28,7 +28,6 @@ class AgendamentoController {
 
     const schema = yup.object().shape({
       horario_id: yup.string().required(),
-      quantidade_pessoas: yup.number().required(),
       mesa_id: yup.number().required(),
     });
 
@@ -39,7 +38,6 @@ class AgendamentoController {
     const agendamento = {
       mesa_id: request.body.mesa_id,
       horario_id: request.body.horario_id,
-      quantidade_pessoas: request.body.quantidade_pessoas,
       cliente_id: request.userId,
     };
 

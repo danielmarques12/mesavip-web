@@ -10,6 +10,17 @@ function getRestaurante(id) {
 export default function Agendamento({ match }) {
   const [horarios, setHorarios] = useState([]);
   const [mesas, setMesas] = useState([]);
+  const [horarioSelecionado, setHorarioSelecionado] = useState(0);
+  const [mesaSelecionada, setMesaSelecionada] = useState(0);
+
+  function realizaAgendamento() {
+    return api
+      .post(`/agendamentos/${match.params.id}`, {
+        horario_id: horarioSelecionado,
+        mesa_id: mesaSelecionada,
+      })
+      .then(document.location.reload(true));
+  }
 
   function getMesas(horario_id) {
     return api.post(`mesas`, { horario_id }).then((response) => {
@@ -29,9 +40,13 @@ export default function Agendamento({ match }) {
 
   return (
     <div>
-      {/* Select com quantidade de pessoas */}
-
-      <select id="horarios" onChange={(event) => getMesas(event.target.value)}>
+      <strong>Horários</strong>
+      <select
+        onChange={(event) => {
+          getMesas(event.target.value);
+          setHorarioSelecionado(event.target.value);
+        }}
+      >
         {horarios.map((horario) => (
           <option key={horario.id} value={horario.id}>
             {horario.horario}
@@ -39,13 +54,17 @@ export default function Agendamento({ match }) {
         ))}
       </select>
 
-      <select id="mesas">
+      <strong>Mesas</strong>
+      <select onChange={(event) => setMesaSelecionada(event.target.value)}>
         {mesas.map((mesa) => (
           <option key={mesa.id} value={mesa.id}>
             {mesa.capacidade}
           </option>
         ))}
       </select>
+      <button type="submit" onClick={realizaAgendamento}>
+        Realizar agendamento
+      </button>
     </div>
   );
 }

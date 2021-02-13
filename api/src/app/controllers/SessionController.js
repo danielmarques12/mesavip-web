@@ -13,7 +13,7 @@ class SessionController {
     }
 
     if (!(await usuario.checkPassword(password))) {
-      return response.status(401).json({ error: 'Senhas não são iguais' });
+      return response.status(401).json({ error: 'Senha ou email incorretos' });
     }
 
     const { id, name } = usuario;

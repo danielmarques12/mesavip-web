@@ -1,7 +1,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { api } from '../../services/api';
+import { api } from '../../../services/api';
 
 function getRestaurantes() {
   return api.get('restaurantes').then((response) => response.data);
