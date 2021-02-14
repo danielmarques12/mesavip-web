@@ -10,14 +10,14 @@ export default createGlobalStyle`
 
   html, body, #root {
     min-height: 100%;
-    background: #222;
+    background: #f3f6fa;
     color: #fff;
   }
 
   body, input, button {
     color: #222;
     font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
   }
 
   button {
