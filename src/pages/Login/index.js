@@ -40,12 +40,13 @@ export default function Login(props) {
         </h3>
       </Texto>
 
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} autoComplete="on">
         <Input
           value={usuario.email}
           onChange={(event) =>
             setUsuario({ ...usuario, email: event.target.value })
           }
+          name="email"
           placeholder="Email"
           type="email"
         />

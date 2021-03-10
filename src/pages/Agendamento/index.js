@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { api } from '../../services/api';
 
+import { Select } from './styles';
+
 function getRestaurante(id) {
   return api.get(`restaurantes/${id}/horarios`);
 }
@@ -41,7 +43,7 @@ export default function Agendamento({ match }) {
   return (
     <div>
       <strong>Horários</strong>
-      <select
+      <Select
         onChange={(event) => {
           getMesas(event.target.value);
           setHorarioSelecionado(event.target.value);
@@ -52,16 +54,16 @@ export default function Agendamento({ match }) {
             {horario.horario}
           </option>
         ))}
-      </select>
+      </Select>
 
       <strong>Mesas</strong>
-      <select onChange={(event) => setMesaSelecionada(event.target.value)}>
+      <Select onChange={(event) => setMesaSelecionada(event.target.value)}>
         {mesas.map((mesa) => (
           <option key={mesa.id} value={mesa.id}>
             {mesa.capacidade}
           </option>
         ))}
-      </select>
+      </Select>
       <button type="submit" onClick={realizaAgendamento}>
         Realizar agendamento
       </button>
