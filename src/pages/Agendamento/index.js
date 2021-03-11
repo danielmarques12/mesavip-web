@@ -3,16 +3,19 @@
 import React, { useState, useEffect } from 'react';
 import { api } from '../../services/api';
 
-import { Select } from './styles';
+import { Container, Select } from './styles';
 
 function getRestaurante(id) {
   return api.get(`restaurantes/${id}/horarios`);
 }
 
 export default function Agendamento({ match }) {
+  const [restaurante, setRestaurante] = useState({});
+
   const [horarios, setHorarios] = useState([]);
-  const [mesas, setMesas] = useState([]);
   const [horarioSelecionado, setHorarioSelecionado] = useState(0);
+
+  const [mesas, setMesas] = useState([]);
   const [mesaSelecionada, setMesaSelecionada] = useState(0);
 
   function realizaAgendamento() {
@@ -34,14 +37,16 @@ export default function Agendamento({ match }) {
     let mounted = true;
     getRestaurante(match.params.id).then((item) => {
       if (mounted) {
-        setHorarios(item.data);
+        setHorarios(item.data.horarios);
+        setRestaurante(item.data.restaurante);
       }
     });
     return () => (mounted = false);
   }, []);
 
   return (
-    <div>
+    <Container>
+      <h1>{restaurante.nome}</h1>
       <strong>Horários</strong>
       <Select
         onChange={(event) => {
@@ -55,7 +60,6 @@ export default function Agendamento({ match }) {
           </option>
         ))}
       </Select>
-
       <strong>Mesas</strong>
       <Select onChange={(event) => setMesaSelecionada(event.target.value)}>
         {mesas.map((mesa) => (
@@ -67,6 +71,6 @@ export default function Agendamento({ match }) {
       <button type="submit" onClick={realizaAgendamento}>
         Realizar agendamento
       </button>
-    </div>
+    </Container>
   );
 }
