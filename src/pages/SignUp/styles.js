@@ -33,6 +33,7 @@ export const SubmitInput = styled(Input)`
   font-weight: 700;
   color: #fff;
   background-color: #db1313;
+  cursor: pointer;
 
   &:hover {
     background-color: #bd1414;
