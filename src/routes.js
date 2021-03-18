@@ -4,16 +4,16 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import ListaDeRestaurantes from './pages/ListaDeRestaurantes';
-import Agendamento from './pages/Agendamento';
+import Restaurante from './pages/Restaurante';
 
 function Routes() {
   return (
     <BrowserRouter>
       <Switch>
+        <Route exact path="/" component={ListaDeRestaurantes} />
         <Route path="/login" component={Login} />
         <Route path="/sign-up" component={SignUp} />
-        <Route exact path="/restaurantes" component={ListaDeRestaurantes} />
-        <Route path="/restaurantes/:id" component={Agendamento} />
+        <Route path="/restaurantes/:id" component={Restaurante} />
       </Switch>
     </BrowserRouter>
   );

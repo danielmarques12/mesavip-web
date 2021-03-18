@@ -5,8 +5,10 @@ export const Container = styled.div`
   margin: 0 auto;
   max-width: 1170px;
   h3 {
+    font-size: 13px;
+    text-align: left;
     color: #000000;
-    margin-bottom: 10px;
+    margin: 10px 0 10px 17.5px;
   }
 `;
 

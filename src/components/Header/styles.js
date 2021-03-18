@@ -6,7 +6,6 @@ export const Head = styled.header`
   align-items: center;
   padding: 0px 28px 0px 24px;
   background: #fff;
-  margin-bottom: 10px;
   height: 75px;
 
   img {
