@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const Media = styled.div`
   ${Padding};
-  width: 250px;
+  width: 270px;
   text-align: center;
 
   h3 {
@@ -21,6 +21,7 @@ export const Media = styled.div`
 
   span {
     font-size: 16px;
+    font-weight: bold;
   }
 
   p {

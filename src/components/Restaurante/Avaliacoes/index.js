@@ -28,7 +28,7 @@ export default function Avaliacoes(props) {
   return (
     <Container>
       <Media>
-        <span>Avaliações dos clientes</span>
+        <span>AVALIAÇÕES DOS CLIENTES</span>
         <h3>{media}</h3>
 
         {estrelas.map((id) => (

@@ -6,7 +6,8 @@ import { api } from '../../../services/api';
 import { Container, Info, Detalhes, Nota } from './styles';
 
 import Avaliacoes from '../Avaliacoes';
-import Imagens from '../Imagens/index';
+import Imagens from '../Imagens';
+import Sobre from '../Sobre';
 
 export default function RestauranteInfo(props) {
   function getRestaurante(id) {
@@ -43,6 +44,14 @@ export default function RestauranteInfo(props) {
       </Info>
 
       <Imagens />
+
+      <Sobre
+        restaurante={{
+          sobre: restaurante.sobre,
+          telefone: restaurante.telefone,
+          site: restaurante.site,
+        }}
+      />
 
       <Avaliacoes
         media={avaliacao.media}

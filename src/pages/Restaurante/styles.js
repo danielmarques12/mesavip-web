@@ -9,9 +9,11 @@ export const Container = styled.div`
     font-weight: 300;
   }
 `;
+
 export const Banner = styled.div`
   text-align: center;
 `;
+
 export const Main = styled.div`
   width: 1370px;
   display: grid;
@@ -19,8 +21,4 @@ export const Main = styled.div`
   grid-template-columns: 60% 40%;
 `;
 
-export const Agendamento = styled.div`
-  background: #fff;
-  margin: 0 auto;
-`;
-export const Select = styled.select``;
+export const Agendamento = styled.div``;

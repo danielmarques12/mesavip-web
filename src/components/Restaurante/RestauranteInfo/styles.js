@@ -12,5 +12,24 @@ export const Info = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-export const Detalhes = styled.div``;
-export const Nota = styled.div``;
+export const Detalhes = styled.div`
+  p {
+    margin: 10px 0;
+  }
+`;
+
+export const Nota = styled.div`
+  .nota {
+    border: 2px solid #fb0;
+    border-radius: 15px;
+    height: 35px;
+    margin-bottom: 10px;
+    text-align: center;
+
+    span {
+      font-size: 25px;
+      color: #fb0;
+      font-weight: bold;
+    }
+  }
+`;
