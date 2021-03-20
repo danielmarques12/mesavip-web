@@ -1,6 +1,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+import { FaStar } from 'react-icons/fa';
 import { api } from '../../services/api';
 
 import {
@@ -10,8 +11,7 @@ import {
   Produto,
   DescricaoProduto,
 } from './styles';
-import imagem_restaurante from '../../placeholder-200x120.png';
-import StarIcon from '../../components/Icons/StarIcon';
+import imagem_restaurante from '../../placeholders/placeholder-200x120.png';
 
 function getRestaurantes() {
   return api.get('restaurantes').then((response) => response.data);
@@ -38,7 +38,6 @@ export default function ListaDeRestaurantes() {
     <Container>
       <h3>{restaurantes.length} Restaurantes disponíveis</h3>
       <RestauranteList>
-        {console.log(restaurantes)}
         {restaurantes.map((restaurante) => (
           <RestauranteCard
             onClick={() => redireciona_para_restaurante(restaurante.id)}
@@ -49,7 +48,7 @@ export default function ListaDeRestaurantes() {
               <div className="div-produto-titulo-e-nota">
                 <strong>{restaurante.nome}</strong>
                 <div className="div-nota">
-                  <StarIcon />
+                  <FaStar color="#fb0" />
                   <span>5.0</span>
                 </div>
               </div>

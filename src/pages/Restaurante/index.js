@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { api } from '../../services/api';
 import { Container, Banner, Main, Agendamento, Select } from './styles';
-import imagem_restaurante from '../../placeholder-1366x300.png';
+import imagem_restaurante from '../../placeholders/placeholder-1366x300.png';
 
 import RestauranteInfo from '../../components/Restaurante/RestauranteInfo';
 

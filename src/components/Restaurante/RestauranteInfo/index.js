@@ -1,10 +1,12 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
+import { FaStar } from 'react-icons/fa';
 import { api } from '../../../services/api';
-import { Container, Info, Nota } from './styles';
+import { Container, Info, Detalhes, Nota } from './styles';
+
 import Avaliacoes from '../Avaliacoes';
-import StarIcon from '../../Icons/StarIcon';
+import Imagens from '../Imagens/index';
 
 export default function RestauranteInfo(props) {
   function getRestaurante(id) {
@@ -24,20 +26,23 @@ export default function RestauranteInfo(props) {
   return (
     <Container>
       <Info>
-        <h1>{restaurante.nome}</h1>
-        <p>
-          {restaurante.bairro} - {restaurante.cidade} - {restaurante.estado}
-        </p>
-        <p>{restaurante.culinaria}</p>
+        <Detalhes>
+          <h1> {restaurante.nome} </h1>
+          <p>
+            {restaurante.bairro} - {restaurante.cidade} - {restaurante.estado}
+          </p>
+          <p> {restaurante.culinaria} </p>
+        </Detalhes>
+        <Nota>
+          <div className="nota">
+            <FaStar color="#fb0" size={17} />
+            <span> {avaliacao.media} </span>
+          </div>
+          <p> {avaliacao.quantidade} avaliações</p>
+        </Nota>
       </Info>
 
-      <Nota>
-        <div className="nota">
-          <StarIcon />
-          <span>{avaliacao.media}</span>
-          <p>{avaliacao.quantidade} avaliações</p>
-        </div>
-      </Nota>
+      <Imagens />
 
       <Avaliacoes
         media={avaliacao.media}

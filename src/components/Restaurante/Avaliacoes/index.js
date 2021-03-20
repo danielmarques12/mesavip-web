@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
+import { FaRegCommentAlt, FaStar } from 'react-icons/fa';
 import { api } from '../../../services/api';
-import { Container, Imagens, Avaliacao, Comentario } from './styles';
-
-import imagemGrande from '../../../placeholder-400x240.png';
-import imagemPequena from '../../../placeholder-200x120.png';
-import StarIcon from '../../Icons/StarIcon';
+import {
+  Container,
+  Media,
+  ContadorDeComentarios,
+  Avaliacao,
+  Comentario,
+} from './styles';
 
 export default function Avaliacoes(props) {
   function getAvaliacoes(id) {
@@ -13,8 +16,8 @@ export default function Avaliacoes(props) {
   }
 
   const [avaliacoes, setAvaliacoes] = useState([]);
-  const { media } = props;
-  const { quantidade } = props;
+  const { media, quantidade } = props;
+  const estrelas = [1, 2, 3, 4, 5];
 
   useEffect(() => {
     getAvaliacoes(props.id).then((item) => {
@@ -24,54 +27,38 @@ export default function Avaliacoes(props) {
 
   return (
     <Container>
-      <span>Avaliação dos clientes</span>
-      <div className="media">
-        <h1>{media}</h1>
-        <div className="stars">
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-        </div>
-        <span> {quantidade} avaliações</span>
-      </div>
-      <Imagens>
-        <div>
-          <img src={imagemGrande} alt="res" />
-        </div>
-        <div>
-          <img src={imagemPequena} alt="res" />
-        </div>
-        <div>
-          <img src={imagemPequena} alt="res" />
-        </div>
-        <div>
-          <img src={imagemPequena} alt="res" />
-        </div>
-        <div>
-          <img src={imagemPequena} alt="res" />
-        </div>
-      </Imagens>
+      <Media>
+        <span>Avaliações dos clientes</span>
+        <h3>{media}</h3>
+
+        {estrelas.map((id) => (
+          <FaStar size={25} color="fb0" key={id} />
+        ))}
+
+        <p> {quantidade} avaliações</p>
+      </Media>
+
       <div className="avaliacoes">
-        <span>{quantidade} comentários de clientes</span>
+        <ContadorDeComentarios>
+          <FaRegCommentAlt size={16} />
+          <span> {quantidade} comentários de clientes </span>
+        </ContadorDeComentarios>
+
         {avaliacoes.map((avaliacao) => (
           <Avaliacao key={avaliacao.id}>
+            <div className="separador" />
             <div className="nome-data">
               <span>{avaliacao.cliente}</span>
               <span>23 março de 2032</span>
             </div>
             <div className="stars">
-              <StarIcon />
-              <StarIcon />
-              <StarIcon />
-              <StarIcon />
-              <StarIcon />
+              {estrelas.map((id) => (
+                <FaStar color="fb0" key={id} />
+              ))}
             </div>
             <Comentario>
               <p>{avaliacao.comentario}</p>
             </Comentario>
-            <hr />
           </Avaliacao>
         ))}
       </div>
