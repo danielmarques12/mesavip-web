@@ -1,18 +1,23 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
-import { Container, Select } from './styles';
+import { Container, Horarios, Mesas, Select } from './styles';
 import { api } from '../../../services/api';
 
 export default function Agendamento(props) {
-  function getHorarios(id) {
-    return api.get(`restaurantes/horarios/${id}`);
-  }
-
   const [horarios, setHorarios] = useState([]);
   const [horarioSelecionado, setHorarioSelecionado] = useState(0);
 
   const [mesas, setMesas] = useState([]);
   const [mesaSelecionada, setMesaSelecionada] = useState(0);
+
+  async function getHorarios(id) {
+    return api.get(`restaurantes/horarios/${id}`);
+  }
+
+  async function getMesas(horario_id) {
+    const response = await api.post(`mesas`, { horario_id });
+    setMesas(response.data);
+  }
 
   function realizaAgendamento() {
     return api
@@ -23,11 +28,6 @@ export default function Agendamento(props) {
       .then(document.location.reload(true));
   }
 
-  async function getMesas(horario_id) {
-    const response = await api.post(`mesas`, { horario_id });
-    setMesas(response.data);
-  }
-
   useEffect(() => {
     getHorarios(props.id).then((item) => {
       setHorarios(item.data);
@@ -36,27 +36,35 @@ export default function Agendamento(props) {
 
   return (
     <Container>
-      <strong>Horários</strong>
-      <Select
-        onChange={(event) => {
-          getMesas(event.target.value);
-          setHorarioSelecionado(event.target.value);
-        }}
-      >
-        {horarios.map((horario) => (
-          <option key={horario.id} value={horario.id}>
-            {horario.horario}
-          </option>
-        ))}
-      </Select>
-      <strong>Mesas</strong>
-      <Select onChange={(event) => setMesaSelecionada(event.target.value)}>
-        {mesas.map((mesa) => (
-          <option key={mesa.id} value={mesa.id}>
-            {mesa.capacidade}
-          </option>
-        ))}
-      </Select>
+      <div className="horarios-mesas">
+        <Horarios>
+          <strong>Horários</strong>
+          <Select
+            onChange={(event) => {
+              getMesas(event.target.value);
+              setHorarioSelecionado(event.target.value);
+            }}
+          >
+            {horarios.map((horario) => (
+              <option key={horario.id} value={horario.id}>
+                {horario.horario}
+              </option>
+            ))}
+          </Select>
+        </Horarios>
+
+        <Mesas>
+          <strong>Mesas</strong>
+          <Select onChange={(event) => setMesaSelecionada(event.target.value)}>
+            {mesas.map((mesa) => (
+              <option key={mesa.id} value={mesa.id}>
+                {mesa.capacidade} pessoas
+              </option>
+            ))}
+          </Select>
+        </Mesas>
+      </div>
+
       <button type="submit" onClick={realizaAgendamento}>
         Realizar agendamento
       </button>

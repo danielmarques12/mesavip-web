@@ -11,14 +11,22 @@ export default function Sobre(props) {
       <span>SOBRE O RESTAURANTE</span>
       <div className="sobre">
         <div>
-          <p>{restaurante.sobre}</p>
+          <p>
+            {/* Inplementar https://stackoverflow.com/questions/28255937/how-to-use-read-more-toggle-for-dynamic-text */}
+            O restaurante foi Fundado pelo chefe proprietário tal, o restaurante
+            traz na íntegra todas as receitas que o chefe aprendeu com sua
+            família ainda no Líbano a mais de 20 anos.
+          </p>
         </div>
         <div>
           <p>
             <FaPhoneAlt /> {restaurante.telefone}
           </p>
           <p>
-            <FaGlobe /> <a href={restaurante.site}>Site do restaurante</a>
+            <FaGlobe />{' '}
+            <a href={restaurante.site} target="_blank" rel="noreferrer">
+              Site do restaurante
+            </a>
           </p>
         </div>
       </div>

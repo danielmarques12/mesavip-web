@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Padding = 'padding: 10px 20px 0px 15px;';
+const Padding = 'padding: 10px 10px 0px 10px;';
 
 export const Container = styled.div`
   background: #fff;
@@ -20,14 +20,17 @@ export const Detalhes = styled.div`
 
 export const Nota = styled.div`
   .nota {
-    border: 2px solid #fb0;
+    border: 1px solid #fb0;
+    padding: 5px;
     border-radius: 15px;
-    height: 35px;
     margin-bottom: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     span {
-      font-size: 25px;
+      margin-left: 5px;
+      font-size: 20px;
       color: #fb0;
       font-weight: bold;
     }

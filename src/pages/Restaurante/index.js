@@ -16,8 +16,10 @@ export default function Restaurante({ match }) {
       </Banner>
 
       <Main>
-        <RestauranteInfo id={restauranteId} />
-        <Agendamento id={restauranteId} />
+        <div className="grid">
+          <RestauranteInfo id={restauranteId} />
+          <Agendamento id={restauranteId} />
+        </div>
       </Main>
     </Container>
   );

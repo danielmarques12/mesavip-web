@@ -15,10 +15,12 @@ export const Banner = styled.div`
 `;
 
 export const Main = styled.div`
-  width: 1370px;
-  display: grid;
   margin: 0 auto;
-  grid-template-columns: 60% 40%;
-`;
 
-export const Agendamento = styled.div``;
+  .grid {
+    width: 1200px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 69% 31%;
+  }
+`;

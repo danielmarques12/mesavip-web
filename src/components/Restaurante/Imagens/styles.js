@@ -12,6 +12,7 @@ export const Container = styled.div`
 
   .imagem-grande {
     margin-right: 3px;
+    margin-left: 3px;
 
     img {
       height: 244px;

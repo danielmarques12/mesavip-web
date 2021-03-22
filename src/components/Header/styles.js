@@ -16,11 +16,12 @@ export const Head = styled.header`
   nav {
     display: flex;
     align-items: center;
+    height: 75px;
 
     ul {
       cursor: pointer;
       li {
-        padding: 100% 16px;
+        padding: 30px 16px;
 
         a {
           text-decoration: none;
@@ -49,9 +50,18 @@ export const Head = styled.header`
         background: #fff;
       }
 
+      button:hover {
+        background: #db1313;
+        color: #fff;
+      }
+
       .signup {
         margin-left: 16px;
       }
+    }
+    .github {
+      text-align: center;
+      width: 75px;
     }
   }
 `;
