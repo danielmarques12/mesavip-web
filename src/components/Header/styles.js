@@ -18,18 +18,24 @@ export const Head = styled.header`
     align-items: center;
     height: 75px;
 
-    ul {
-      cursor: pointer;
-      li {
-        padding: 30px 16px;
+    a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #000;
+      font-weight: 400;
 
-        a {
-          text-decoration: none;
-          font-size: 16px;
-          color: #000;
-          font-weight: 400;
+      ul {
+        cursor: pointer;
+        li {
+          list-style-type: none;
+          padding: 30px 16px;
         }
       }
+    }
+
+    .github-link {
+      text-align: center;
+      width: 75px;
     }
 
     ul:hover {
@@ -58,10 +64,6 @@ export const Head = styled.header`
       .signup {
         margin-left: 16px;
       }
-    }
-    .github {
-      text-align: center;
-      width: 75px;
     }
   }
 `;
