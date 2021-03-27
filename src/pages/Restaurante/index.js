@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { Container, Banner, Main } from './styles';
-import imagem_restaurante from '../../placeholders/placeholder-1366x300.png';
+import { banner } from '../../assets/placeholders';
 
 import RestauranteInfo from '../../components/Restaurante/RestauranteInfo';
 import Agendamento from '../../components/Restaurante/Agendamento';
@@ -12,7 +12,7 @@ export default function Restaurante({ match }) {
   return (
     <Container>
       <Banner>
-        <img src={imagem_restaurante} alt="Imagem do restaurante" />
+        <img src={banner} alt="Imagem do restaurante" />
       </Banner>
 
       <Main>

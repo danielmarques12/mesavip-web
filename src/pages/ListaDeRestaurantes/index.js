@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { api } from '../../services/api';
-
 import {
   Container,
   RestauranteList,
@@ -11,7 +10,7 @@ import {
   Produto,
   DescricaoProduto,
 } from './styles';
-import imagem_restaurante from '../../placeholders/placeholder-200x120.png';
+import { imagemPequena } from '../../assets/placeholders';
 
 function getRestaurantes() {
   return api.get('restaurantes').then((response) => response.data);
@@ -43,7 +42,7 @@ export default function ListaDeRestaurantes() {
             onClick={() => redireciona_para_restaurante(restaurante.id)}
           >
             <Produto>
-              <img src={imagem_restaurante} alt={restaurante.nome} />
+              <img src={imagemPequena} alt={restaurante.nome} />
 
               <div className="div-produto-titulo-e-nota">
                 <strong>{restaurante.nome}</strong>
@@ -55,7 +54,7 @@ export default function ListaDeRestaurantes() {
               <DescricaoProduto>
                 <div className="div-produto-culinaria-e-localizacao">
                   <p>Culinária</p>
-                  <p>Localização</p>
+                  <p>Bairro</p>
                 </div>
                 <div>R$ 25 - R$50</div>
               </DescricaoProduto>

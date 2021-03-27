@@ -1,9 +1,11 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { Head } from './styles';
-import logo from '../../assets/logo.png';
 
 export default function Header() {
+  const logo =
+    'https://res.cloudinary.com/du39ecvjf/image/upload/v1616871437/logo_ifyju9.png';
+
   return (
     <Head>
       <img src={logo} alt="Mesavip logo" />
