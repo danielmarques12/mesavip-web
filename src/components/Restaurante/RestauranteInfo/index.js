@@ -43,7 +43,7 @@ export default function RestauranteInfo(props) {
         </Nota>
       </Info>
 
-      <Imagens />
+      <Imagens id={props.id} />
 
       <Sobre
         restaurante={{

@@ -10,10 +10,6 @@ export const Container = styled.div`
   }
 `;
 
-export const Banner = styled.div`
-  text-align: center;
-`;
-
 export const Main = styled.div`
   margin: 0 auto;
 

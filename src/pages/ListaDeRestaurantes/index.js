@@ -10,7 +10,6 @@ import {
   Produto,
   DescricaoProduto,
 } from './styles';
-import { imagemPequena } from '../../assets/placeholders';
 
 function getRestaurantes() {
   return api.get('restaurantes').then((response) => response.data);
@@ -42,7 +41,10 @@ export default function ListaDeRestaurantes() {
             onClick={() => redireciona_para_restaurante(restaurante.id)}
           >
             <Produto>
-              <img src={imagemPequena} alt={restaurante.nome} />
+              <img
+                src={`http://localhost:3333/files/${restaurante.path}`}
+                alt={restaurante.nome}
+              />
 
               <div className="div-produto-titulo-e-nota">
                 <strong>{restaurante.nome}</strong>
@@ -53,8 +55,8 @@ export default function ListaDeRestaurantes() {
               </div>
               <DescricaoProduto>
                 <div className="div-produto-culinaria-e-localizacao">
-                  <p>Culinária</p>
-                  <p>Bairro</p>
+                  <p>{restaurante.culinaria}</p>
+                  <p>{restaurante.bairro}</p>
                 </div>
                 <div>R$ 25 - R$50</div>
               </DescricaoProduto>
