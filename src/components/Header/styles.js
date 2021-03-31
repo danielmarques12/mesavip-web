@@ -61,7 +61,7 @@ export const Head = styled.header`
         color: #fff;
       }
 
-      .signup {
+      a:nth-child(2) {
         margin-left: 16px;
       }
     }
