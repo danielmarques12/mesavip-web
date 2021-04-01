@@ -12,7 +12,7 @@ export default function Restaurante({ match }) {
 
   return (
     <Container>
-      <Banner id={restauranteId} />
+      <Banner restaurante_id={restauranteId} />
 
       <Main>
         <div className="grid">

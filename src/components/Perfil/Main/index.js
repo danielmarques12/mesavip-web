@@ -5,7 +5,8 @@ import Arquivos from '../Arquivos';
 export default function Main() {
   return (
     <Container>
-      <Arquivos />
+      <Arquivos imageType="banner" multiple={false} />
+      <Arquivos imageType="galeria" multiple />
     </Container>
   );
 }

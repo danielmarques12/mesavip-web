@@ -1,10 +1,11 @@
-/* eslint-disable no-restricted-globals */
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { api } from '../../../services/api';
 import { Container } from './styles';
 
-export default function Arquivos() {
+export default function Arquivos(props) {
   const [files, setFiles] = useState('');
+  const { multiple, imageType } = props;
 
   async function formSubmit(event) {
     event.preventDefault();
@@ -12,7 +13,7 @@ export default function Arquivos() {
     files.map(async (file) => {
       const data = new FormData();
       data.append('file', file);
-      data.append('type', 'galeria');
+      data.append('type', imageType);
 
       await api.post('files', data);
     });
@@ -25,7 +26,7 @@ export default function Arquivos() {
   return (
     <Container>
       <form onSubmit={formSubmit}>
-        <input type="file" onChange={fileChange} multiple />
+        <input type="file" onChange={fileChange} multiple={multiple} />
         <input type="submit" />
       </form>
     </Container>
