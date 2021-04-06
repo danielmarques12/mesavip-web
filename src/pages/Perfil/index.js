@@ -6,7 +6,7 @@ import { Container } from './styles';
 export default function Perfil() {
   return (
     <Container>
-      <Main />;
+      <Main />
     </Container>
   );
 }

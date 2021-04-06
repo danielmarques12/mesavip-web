@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { api } from '../../../services/api';
 import { Container } from './styles';
+import { bannerUpload, galeriaUpload } from '../../../helpers/FileUploadHelper';
 
 export default function Arquivos(props) {
   const [files, setFiles] = useState('');
@@ -10,13 +11,9 @@ export default function Arquivos(props) {
   async function formSubmit(event) {
     event.preventDefault();
 
-    files.map(async (file) => {
-      const data = new FormData();
-      data.append('file', file);
-      data.append('type', imageType);
-
-      await api.post('files', data);
-    });
+    files.map(async (file) =>
+      imageType === 'banner' ? bannerUpload(file) : galeriaUpload(file)
+    );
   }
 
   async function fileChange(event) {
