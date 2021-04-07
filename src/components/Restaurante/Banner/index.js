@@ -4,11 +4,11 @@ import { api } from '../../../services/api';
 
 export default function Banner(props) {
   const [banner, setBanner] = useState('');
-  const restaurante_id = { props };
+  const { restaurante_id } = props;
 
   useEffect(() => {
     api
-      .post('getfiles', { restaurante_id, type: 'banner' })
+      .post('imagens', { restaurante_id, type: 'banner' })
       .then((item) => setBanner(item.data[0].path));
   }, []);
 

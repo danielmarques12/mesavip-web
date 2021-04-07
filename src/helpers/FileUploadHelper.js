@@ -15,5 +15,5 @@ export function bannerUpload(file) {
 }
 
 export function galeriaUpload(file) {
-  formData(file, 'galeria');
+  formData(file, 'galeria', '');
 }

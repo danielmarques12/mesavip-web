@@ -12,24 +12,20 @@ import {
 } from './styles';
 
 function getRestaurantes() {
-  return api.get('restaurantes').then((response) => response.data);
+  return api.get('restaurantes/lista').then((response) => response.data);
 }
 
 export default function ListaDeRestaurantes() {
   const [restaurantes, setRestaurantes] = useState([]);
 
-  function redireciona_para_restaurante(restaurante_id) {
+  function redirecionaParaRestaurante(restaurante_id) {
     window.location.href = `../restaurantes/${restaurante_id}`;
   }
 
   useEffect(() => {
-    let mounted = true;
     getRestaurantes().then((items) => {
-      if (mounted) {
-        setRestaurantes(items);
-      }
+      setRestaurantes(items);
     });
-    return () => (mounted = false);
   }, []);
 
   return (
@@ -38,13 +34,10 @@ export default function ListaDeRestaurantes() {
       <RestauranteList>
         {restaurantes.map((restaurante) => (
           <RestauranteCard
-            onClick={() => redireciona_para_restaurante(restaurante.id)}
+            onClick={() => redirecionaParaRestaurante(restaurante.id)}
           >
             <Produto>
-              <img
-                src={`http://localhost:3333/files/${restaurante.path}`}
-                alt={restaurante.nome}
-              />
+              <img src={restaurante.path} alt={restaurante.nome} />
 
               <div className="div-produto-titulo-e-nota">
                 <strong>{restaurante.nome}</strong>
