@@ -14,6 +14,6 @@ export async function bannerUpload(file) {
   await formData(file, 'lista', 'mesavip-lista-de-restaurantes');
 }
 
-export function galeriaUpload(file) {
-  formData(file, 'galeria', '');
+export async function galeriaUpload(file) {
+  await formData(file, 'galeria', '');
 }
