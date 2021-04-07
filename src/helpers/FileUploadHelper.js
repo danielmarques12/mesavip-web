@@ -9,9 +9,9 @@ async function formData(file, imageType, transformation) {
   await api.post('files', data);
 }
 
-export function bannerUpload(file) {
-  formData(file, 'banner', 'mesavip-banner-restaurante');
-  formData(file, 'lista', 'mesavip-lista-de-restaurantes');
+export async function bannerUpload(file) {
+  await formData(file, 'banner', 'mesavip-banner-restaurante');
+  await formData(file, 'lista', 'mesavip-lista-de-restaurantes');
 }
 
 export function galeriaUpload(file) {
