@@ -1,4 +1,4 @@
-import { api } from '../services/api';
+import { api } from '../../../services/api';
 
 async function formData(file, imageType, transformation) {
   const data = new FormData();

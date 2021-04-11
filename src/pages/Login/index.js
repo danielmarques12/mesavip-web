@@ -4,7 +4,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { api } from '../../services/api';
-import { login } from '../../services/auth';
+import { login, setUserType } from '../../services/auth';
 import {
   Container,
   Form,
@@ -18,7 +18,8 @@ import {
 function POST_SESSIONS(usuario) {
   return api.post('sessions', usuario).then((response) => {
     login(response.data.token);
-    window.location.href = '../restaurantes';
+    setUserType(response.data.userType);
+    window.location.href = '../';
   });
 }
 

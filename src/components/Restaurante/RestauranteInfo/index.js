@@ -11,7 +11,7 @@ import Sobre from '../Sobre';
 
 export default function RestauranteInfo(props) {
   function getRestaurante(id) {
-    return api.get(`restaurantes/${id}`);
+    return api.get(`restaurante/${id}`);
   }
 
   const [restaurante, setRestaurante] = useState({});

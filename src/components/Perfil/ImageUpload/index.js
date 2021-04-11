@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import { api } from '../../../services/api';
 import { Container } from './styles';
-import { bannerUpload, galeriaUpload } from '../../../helpers/FileUploadHelper';
+import { bannerUpload, galeriaUpload } from './utils';
 
-export default function Arquivos(props) {
+export default function ImageUpload(props) {
   const [files, setFiles] = useState('');
-  const { multiple, imageType } = props;
+  const { multipleFiles, imageType } = props;
 
   async function formSubmit(event) {
     event.preventDefault();
@@ -23,7 +23,9 @@ export default function Arquivos(props) {
   return (
     <Container>
       <form onSubmit={formSubmit}>
-        <input type="file" onChange={fileChange} multiple={multiple} />
+        <span>Upload {multipleFiles ? 'Galeria' : 'Banner'}</span>
+
+        <input type="file" onChange={fileChange} multiple={multipleFiles} />
         <input type="submit" />
       </form>
     </Container>
