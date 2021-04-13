@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import PrivateRoute from './components/Routes/PrivateRoute';
+import PublicRoute from './components/Routes/PublicRoute';
 
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
@@ -11,11 +13,20 @@ function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={ListaDeRestaurantes} />
-        <Route path="/login" component={Login} />
-        <Route path="/sign-up" component={SignUp} />
-        <Route path="/perfil" component={Perfil} />
-        <Route path="/restaurantes/:id" component={Restaurante} />
+        <PublicRoute
+          restricted={false}
+          exact
+          path="/"
+          component={ListaDeRestaurantes}
+        />
+        <PublicRoute
+          restricted={false}
+          path="/restaurantes/:id"
+          component={Restaurante}
+        />
+        <PublicRoute restricted exact path="/login" component={Login} />
+        <PublicRoute restricted exact path="/sign-up" component={SignUp} />
+        <PrivateRoute path="/perfil" exact component={Perfil} />
       </Switch>
     </BrowserRouter>
   );
