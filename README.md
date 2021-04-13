@@ -7,7 +7,7 @@
  
 [Repositório da API](https://github.com/danielmarques12/mesavip-api)
 
-[Acesse o site](https://mesavip-web.herokuapp.com/)
+[Acesse o site](http://mesavip.gq)
 
 
 

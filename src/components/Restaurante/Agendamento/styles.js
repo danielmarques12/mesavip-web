@@ -16,7 +16,7 @@ export const Container = styled.div`
   }
 
   button {
-    margin-top: 22.5px;
+    margin-top: 20px;
     background: #db1313;
     padding: 8px;
     border-radius: 5px;
@@ -31,17 +31,13 @@ export const Container = styled.div`
     background: #be0a0a;
   }
 `;
-export const Horarios = styled.div`
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-`;
 
-export const Mesas = styled.div`
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+export const Horarios = styled.div`
+  align-items: center;
 `;
 
 export const Select = styled.select`
+  margin-top: 10px;
   font-size: 17px;
   width: 100px;
   height: 30px;
