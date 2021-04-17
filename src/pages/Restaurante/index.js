@@ -17,7 +17,7 @@ export default function Restaurante({ match }) {
       <Main>
         <div className="grid">
           <RestauranteInfo id={restauranteId} />
-          <Agendamento id={restauranteId} />
+          <Agendamento restaurante_id={restauranteId} />
         </div>
       </Main>
     </Container>

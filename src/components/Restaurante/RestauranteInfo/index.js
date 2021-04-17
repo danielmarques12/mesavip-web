@@ -10,12 +10,12 @@ import Imagens from '../Imagens';
 import Sobre from '../Sobre';
 
 export default function RestauranteInfo(props) {
+  const [restaurante, setRestaurante] = useState({});
+  const [avaliacao, setAvaliacao] = useState({});
+
   function getRestaurante(id) {
     return api.get(`restaurante/${id}`);
   }
-
-  const [restaurante, setRestaurante] = useState({});
-  const [avaliacao, setAvaliacao] = useState({});
 
   useEffect(() => {
     getRestaurante(props.id).then((item) => {

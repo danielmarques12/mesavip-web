@@ -10,7 +10,7 @@ export default function Imagens(props) {
   const { restaurante_id } = props;
 
   useEffect(() => {
-    api.post('imagens', { restaurante_id, type: 'galeria' }).then((item) => {
+    api.post(`imagens/${restaurante_id}`, { type: 'galeria' }).then((item) => {
       setImagemGrande(item.data.shift());
       setImagens(item.data);
     });
