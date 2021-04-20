@@ -11,12 +11,12 @@ import {
   DescricaoProduto,
 } from './styles';
 
-function getRestaurantes() {
-  return api.get('restaurantes/lista').then((response) => response.data);
-}
-
 export default function ListaDeRestaurantes() {
   const [restaurantes, setRestaurantes] = useState([]);
+
+  function getRestaurantes() {
+    return api.get('restaurantes/lista').then((response) => response.data);
+  }
 
   function redirecionaParaRestaurante(restaurante_id) {
     window.location.href = `../restaurantes/${restaurante_id}`;
@@ -43,7 +43,7 @@ export default function ListaDeRestaurantes() {
                 <strong>{restaurante.nome}</strong>
                 <div className="div-nota">
                   <FaStar color="#fb0" />
-                  <span>5.0</span>
+                  <span>{restaurante.media}</span>
                 </div>
               </div>
               <DescricaoProduto>

@@ -32,11 +32,12 @@ export const Media = styled.div`
 
 export const ContadorDeComentarios = styled.div`
   display: flex;
-  width: 265px;
+  width: 268px;
   justify-content: space-between;
   ${Padding};
 
   span {
+    margin-left: 3px;
     color: #53565a;
     font-size: 16px;
   }

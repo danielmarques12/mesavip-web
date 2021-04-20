@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp';
 import Perfil from './pages/Perfil';
 import Restaurante from './pages/Restaurante';
 import ListaDeRestaurantes from './pages/ListaDeRestaurantes';
+import MyScheduling from './pages/MyScheduling';
 
 function Routes() {
   return (
@@ -27,6 +28,7 @@ function Routes() {
         <PublicRoute restricted exact path="/login" component={Login} />
         <PublicRoute restricted exact path="/sign-up" component={SignUp} />
         <PrivateRoute path="/perfil" exact component={Perfil} />
+        <PrivateRoute path="/my-scheduling" exact component={MyScheduling} />
       </Switch>
     </BrowserRouter>
   );
