@@ -11,18 +11,15 @@ import Sobre from '../Sobre';
 
 export default function RestauranteInfo(props) {
   const [restaurante, setRestaurante] = useState({});
-  const [avaliacao, setAvaliacao] = useState({});
+  const { restaurante_id } = props;
 
-  function getRestaurante(id) {
-    return api.get(`restaurante/${id}`);
-  }
-
-  useEffect(() => {
-    getRestaurante(props.id).then((item) => {
-      setRestaurante(item.data.restaurante[0]);
-      setAvaliacao(item.data.avaliacao);
-    });
-  }, []);
+  useEffect(
+    () =>
+      api.get(`restaurante/${restaurante_id}`).then((item) => {
+        setRestaurante(item.data);
+      }),
+    []
+  );
 
   return (
     <Container>
@@ -34,16 +31,17 @@ export default function RestauranteInfo(props) {
           </p>
           <p> {restaurante.culinaria} </p>
         </Detalhes>
+
         <Nota>
           <div className="nota">
             <FaStar color="#fb0" size={17} />
-            <span> {avaliacao.media} </span>
+            <span> {restaurante.media} </span>
           </div>
-          <p> {avaliacao.quantidade} avaliações</p>
+          <p> {restaurante.totaldeavaliacoes} avaliações</p>
         </Nota>
       </Info>
 
-      <Imagens restaurante_id={props.id} />
+      <Imagens restaurante_id={restaurante_id} />
 
       <Sobre
         restaurante={{
@@ -54,9 +52,9 @@ export default function RestauranteInfo(props) {
       />
 
       <Avaliacoes
-        media={avaliacao.media}
-        quantidade={avaliacao.quantidade}
-        id={props.id}
+        media={restaurante.media}
+        quantidade={restaurante.totaldeavaliacoes}
+        id={restaurante_id}
       />
     </Container>
   );

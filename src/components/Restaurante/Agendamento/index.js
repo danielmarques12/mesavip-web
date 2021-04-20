@@ -9,12 +9,8 @@ export default function Agendamento(props) {
   const [horarioSelecionado, setHorarioSelecionado] = React.useState(0);
   const { restaurante_id } = props;
 
-  async function getHorarios(id) {
-    return api.get(`mesas/${props.restaurante_id}`);
-  }
-
   useEffect(() => {
-    getHorarios(props.id).then((item) => {
+    api.get(`mesas/${props.restaurante_id}`).then((item) => {
       setHorarios(item.data);
     });
   }, []);
