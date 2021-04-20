@@ -27,9 +27,9 @@ export default function Header() {
             <li>Restaurantes</li>
           </ul>
         </a>
-        <a href="/">
+        <a href="/my-scheduling">
           <ul>
-            <li>Como funciona</li>
+            <li>Meus agendamentos</li>
           </ul>
         </a>
         <a href="/">
