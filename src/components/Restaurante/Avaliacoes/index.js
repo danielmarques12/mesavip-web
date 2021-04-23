@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
-import { FaRegCommentAlt, FaStar } from 'react-icons/fa';
+import { FaRegCommentAlt, FaStar, FaStarHalf } from 'react-icons/fa';
 import { api } from '../../../services/api';
 import {
   Container,
@@ -9,18 +9,14 @@ import {
   Avaliacao,
   Comentario,
 } from './styles';
+import Stars from './Stars';
 
 export default function Avaliacoes(props) {
-  function getAvaliacoes(id) {
-    return api.get(`restaurantes/avaliacoes/${id}`);
-  }
-
   const [avaliacoes, setAvaliacoes] = useState([]);
-  const { media, quantidade } = props;
-  const estrelas = [1, 2, 3, 4, 5];
+  const { media, quantidade, restaurante_id } = props;
 
   useEffect(() => {
-    getAvaliacoes(props.id).then((item) => {
+    api.get(`restaurantes/avaliacoes/${restaurante_id}`).then((item) => {
       setAvaliacoes(item.data);
     });
   }, []);
@@ -31,9 +27,7 @@ export default function Avaliacoes(props) {
         <span>AVALIAÇÕES DOS CLIENTES</span>
         <h3>{media}</h3>
 
-        {estrelas.map((id) => (
-          <FaStar size={25} color="fb0" key={id} />
-        ))}
+        <Stars media={media} />
 
         <p> {quantidade} avaliações</p>
       </Media>
@@ -47,15 +41,18 @@ export default function Avaliacoes(props) {
         {avaliacoes.map((avaliacao) => (
           <Avaliacao key={avaliacao.id}>
             <div className="separador" />
+
             <div className="nome-data">
               <span>{avaliacao.cliente}</span>
               <span>23 março de 2032</span>
             </div>
-            <div className="stars">
+
+            {/* <div className="stars">
               {estrelas.map((id) => (
                 <FaStar color="fb0" key={id} />
               ))}
-            </div>
+            </div> */}
+
             <Comentario>
               <p>{avaliacao.comentario}</p>
             </Comentario>
