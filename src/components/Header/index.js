@@ -11,7 +11,8 @@ export default function Header() {
       <img src="https://bit.ly/3sERTuX" alt="Mesavip logo" />
       <nav>
         <a
-          href="https://github.com/danielmarques12/mesavip-web"
+          href="https://bit.ly/3tIw4v3"
+          alt="Link to my github repo"
           target="_blank"
           rel="noreferrer"
           className="github-link"
@@ -30,11 +31,6 @@ export default function Header() {
         <a href="/my-scheduling">
           <ul>
             <li>Meus agendamentos</li>
-          </ul>
-        </a>
-        <a href="/">
-          <ul>
-            <li>Sobre</li>
           </ul>
         </a>
 

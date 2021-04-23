@@ -35,6 +35,7 @@ export default function ListaDeRestaurantes() {
         {restaurantes.map((restaurante) => (
           <RestauranteCard
             onClick={() => redirecionaParaRestaurante(restaurante.id)}
+            key={restaurante.id}
           >
             <Produto>
               <img src={restaurante.path} alt={restaurante.nome} />

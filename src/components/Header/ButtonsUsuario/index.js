@@ -5,7 +5,7 @@ export default function ButtonsUsuario() {
   return (
     <div className="buttons">
       <a href="/perfil">
-        <button type="button">Perfil</button>
+        <button type="button">Meu Perfil</button>
       </a>
       <a href="/">
         <button onClick={() => logout()} type="button">

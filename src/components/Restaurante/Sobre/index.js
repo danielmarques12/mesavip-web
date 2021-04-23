@@ -21,7 +21,7 @@ export default function Sobre(props) {
             <FaPhoneAlt /> {restaurante.telefone}
           </p>
           <p>
-            <FaGlobe />{' '}
+            <FaGlobe />
             <a href={restaurante.site} target="_blank" rel="noreferrer">
               Site do restaurante
             </a>

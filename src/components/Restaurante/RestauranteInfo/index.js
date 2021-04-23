@@ -54,7 +54,7 @@ export default function RestauranteInfo(props) {
       <Avaliacoes
         media={restaurante.media}
         quantidade={restaurante.totaldeavaliacoes}
-        id={restaurante_id}
+        restaurante_id={restaurante_id}
       />
     </Container>
   );
