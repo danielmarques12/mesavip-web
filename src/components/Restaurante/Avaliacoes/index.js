@@ -5,9 +5,10 @@ import { api } from '../../../services/api';
 import {
   Container,
   Media,
-  ContadorDeComentarios,
+  QuantidadeDeComentarios,
   Avaliacao,
   Comentario,
+  Separador,
 } from './styles';
 import Stars from './Stars';
 
@@ -26,32 +27,26 @@ export default function Avaliacoes(props) {
       <Media>
         <span>AVALIAÇÕES DOS CLIENTES</span>
         <h3>{media}</h3>
-
-        <Stars media={media} />
-
+        <Stars numberOfStars={media} starSize={25} />
         <p> {quantidade} avaliações</p>
       </Media>
 
       <div className="avaliacoes">
-        <ContadorDeComentarios>
+        <QuantidadeDeComentarios>
           <FaRegCommentAlt size={16} />
           <span> {quantidade} comentários de clientes </span>
-        </ContadorDeComentarios>
+        </QuantidadeDeComentarios>
 
         {avaliacoes.map((avaliacao) => (
           <Avaliacao key={avaliacao.id}>
-            <div className="separador" />
+            <Separador />
 
             <div className="nome-data">
               <span>{avaliacao.cliente}</span>
               <span>23 março de 2032</span>
             </div>
 
-            {/* <div className="stars">
-              {estrelas.map((id) => (
-                <FaStar color="fb0" key={id} />
-              ))}
-            </div> */}
+            <Stars numberOfStars={avaliacao.nota} starSize={16} />
 
             <Comentario>
               <p>{avaliacao.comentario}</p>

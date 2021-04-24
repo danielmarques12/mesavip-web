@@ -30,7 +30,7 @@ export const Media = styled.div`
   }
 `;
 
-export const ContadorDeComentarios = styled.div`
+export const QuantidadeDeComentarios = styled.div`
   display: flex;
   width: 268px;
   justify-content: space-between;
@@ -52,21 +52,22 @@ export const Avaliacao = styled.div`
   font-size: 17px;
   font-weight: 500;
 
-  .separador {
-    margin-bottom: 20px;
-    padding: 0 30px;
-    border: 0.1px solid rgba(0, 0, 0, 0.0275);
-  }
-
   .nome-data {
     display: flex;
     justify-content: space-between;
   }
 
-  .stars {
-    margin: 10px 0;
+  svg {
+    margin-top: 10px;
   }
 `;
+
 export const Comentario = styled.div`
   margin-top: 20px;
+`;
+
+export const Separador = styled.div`
+  margin-bottom: 20px;
+  padding: 0 30px;
+  border: 0.1px solid rgba(0, 0, 0, 0.0275);
 `;

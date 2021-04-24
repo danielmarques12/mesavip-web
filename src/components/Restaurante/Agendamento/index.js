@@ -19,7 +19,7 @@ export default function Agendamento(props) {
     <Container>
       <div className="horarios-mesas">
         <Horarios>
-          <strong>Horários disponíveis</strong>
+          <strong>Horários disponíveis (hoje)</strong>
           <Select
             onChange={(event) => {
               setHorarioSelecionado(event.target.value);
