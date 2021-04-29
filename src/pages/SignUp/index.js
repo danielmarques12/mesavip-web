@@ -9,75 +9,62 @@ import {
   Form,
   Input,
   SubmitInput,
-  Texto,
+  Text,
   Separator,
   CreateAccountLink,
 } from './styles';
 
-function POST_CRIAR_USUARIO(usuario) {
-  return api.post('usuarios', usuario).then(() => {
-    window.location.href = '/login';
-  });
-}
-
 export default function SignUp(props) {
-  const [usuario, setUsuario] = useState({});
+  const [user, setUser] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    POST_CRIAR_USUARIO(usuario);
+    return api.post('users', user).then(() => {
+      window.location.href = '/login';
+    });
   };
 
   return (
     <Container>
-      <Texto>
+      <Text>
         <h2>MESAVIP</h2>
         <h3>
-          O Mesavip ajuda você a fazer agendamentos em seus restaurantes
-          preferidos.
+          Mesavip helps you making reservations in your favorite restaurants.
         </h3>
-      </Texto>
+      </Text>
 
       <Form onSubmit={handleSubmit}>
         <Input
-          value={usuario.nome}
-          onChange={(event) =>
-            setUsuario({ ...usuario, nome: event.target.value })
-          }
-          placeholder="Nome"
+          value={user.name}
+          onChange={(event) => setUser({ ...user, name: event.target.value })}
+          placeholder="Name"
           type="text"
         />
         <Input
-          value={usuario.email}
-          onChange={(event) =>
-            setUsuario({ ...usuario, email: event.target.value })
-          }
+          value={user.email}
+          onChange={(event) => setUser({ ...user, email: event.target.value })}
           placeholder="Email"
           type="email"
         />
 
         <Input
-          value={usuario.cpf}
-          onChange={(event) =>
-            setUsuario({ ...usuario, cpf: event.target.value })
-          }
+          value={user.cpf}
+          onChange={(event) => setUser({ ...user, cpf: event.target.value })}
           placeholder="CPF"
           type="text"
         />
 
         <Input
-          value={usuario.cnpj}
-          onChange={(event) =>
-            setUsuario({ ...usuario, cnpj: event.target.value })
-          }
+          value={user.cnpj}
+          onChange={(event) => setUser({ ...user, cnpj: event.target.value })}
           placeholder="CNPJ"
           type="text"
         />
 
         <Input
-          value={usuario.password}
+          value={user.password}
           onChange={(event) =>
-            setUsuario({ ...usuario, password: event.target.value })
+            setUser({ ...user, password: event.target.value })
           }
           placeholder="Senha"
           type="password"
@@ -88,7 +75,7 @@ export default function SignUp(props) {
         <Separator />
 
         <CreateAccountLink>
-          <a href="/login"> Já sou cadastrado </a>
+          <a href="/login"> Already have an account? </a>
         </CreateAccountLink>
       </Form>
     </Container>

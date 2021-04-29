@@ -53,7 +53,7 @@ export const CreateAccountLink = styled.div`
     display: block;
     margin: 0 auto;
     margin-bottom: 15px;
-    width: 50%;
+    width: 60%;
     height: 50px;
     padding: 12.5px;
     font-size: 17px;
@@ -65,7 +65,7 @@ export const CreateAccountLink = styled.div`
   }
 `;
 
-export const Texto = styled.div`
+export const Text = styled.div`
   padding: 50px;
 
   h2 {

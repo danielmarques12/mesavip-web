@@ -10,65 +10,61 @@ import {
   Form,
   Input,
   SubmitInput,
-  Texto,
+  Text,
   Separator,
   CreateAccountLink,
 } from './styles';
 
-function POST_SESSIONS(usuario) {
-  return api.post('sessions', usuario).then((response) => {
-    login(response.data.token);
-    setUserType(response.data.userType);
-    window.location.href = '../';
-  });
-}
+function POST_SESSIONS(user) {}
 
 export default function Login(props) {
-  const [usuario, setUsuario] = useState({});
+  const [user, setUser] = useState({});
 
-  const handleSubmit = (event) => {
+  async function handleSubmit(event) {
     event.preventDefault();
-    POST_SESSIONS(usuario);
-  };
+
+    const response = await api.post('sessions', user);
+    login(response.data.token);
+    setUserType(response.data.userType);
+
+    window.location.href = '../';
+  }
 
   return (
     <Container>
-      <Texto>
+      <Text>
         <h2>MESAVIP</h2>
         <h3>
-          O Mesavip ajuda você a fazer agendamentos em seus restaurantes
-          preferidos.
+          Mesavip helps you making reservations in your favorite restaurants.
         </h3>
-      </Texto>
+      </Text>
 
       <Form onSubmit={handleSubmit} autoComplete="on">
         <Input
-          value={usuario.email}
-          onChange={(event) =>
-            setUsuario({ ...usuario, email: event.target.value })
-          }
+          value={user.email}
+          onChange={(event) => setUser({ ...user, email: event.target.value })}
           name="email"
           placeholder="Email"
           type="email"
         />
 
         <Input
-          value={usuario.password}
+          value={user.password}
           onChange={(event) =>
-            setUsuario({ ...usuario, password: event.target.value })
+            setUser({ ...user, password: event.target.value })
           }
-          placeholder="Senha"
+          placeholder="Password"
           type="password"
         />
 
-        <SubmitInput type="submit" value="Entrar" />
+        <SubmitInput type="submit" value="Login" />
 
-        <a href="/#">Esqueceu a senha?</a>
+        <a href="/#">Forgot your password?</a>
 
         <Separator />
 
         <CreateAccountLink>
-          <a href="/sign-up"> Criar nova conta </a>
+          <a href="/sign-up"> Create new account </a>
         </CreateAccountLink>
       </Form>
     </Container>

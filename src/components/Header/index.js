@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { Head } from './styles';
-import ButtonsUsuario from './ButtonsUsuario';
-import ButtonsConvidado from './ButtonsConvidado';
+import ButtonsGuest from './ButtonsGuest';
+import ButtonsUser from './ButtonsUser';
 import { isAuthenticated } from '../../services/auth';
 
 export default function Header() {
@@ -12,7 +12,7 @@ export default function Header() {
       <nav>
         <a
           href="https://bit.ly/3tIw4v3"
-          alt="Link to my github repo"
+          alt="Link to the application github repo"
           target="_blank"
           rel="noreferrer"
           className="github-link"
@@ -25,16 +25,16 @@ export default function Header() {
         </a>
         <a href="/">
           <ul>
-            <li>Restaurantes</li>
+            <li>Restaurants</li>
           </ul>
         </a>
-        <a href="/my-scheduling">
+        <a href="/reservations">
           <ul>
-            <li>Meus agendamentos</li>
+            <li>My reservations</li>
           </ul>
         </a>
 
-        {isAuthenticated() ? <ButtonsUsuario /> : <ButtonsConvidado />}
+        {isAuthenticated() ? <ButtonsUser /> : <ButtonsGuest />}
       </nav>
     </Head>
   );

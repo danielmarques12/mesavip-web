@@ -5,10 +5,10 @@ import PublicRoute from './components/Routes/PublicRoute';
 
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-import Perfil from './pages/Perfil';
-import Restaurante from './pages/Restaurante';
-import ListaDeRestaurantes from './pages/ListaDeRestaurantes';
-import MyScheduling from './pages/MyScheduling';
+import Profile from './pages/Profile';
+import Restaurant from './pages/Restaurant';
+import RestaurantsList from './pages/RestaurantsList';
+import Reservations from './pages/Reservations';
 
 function Routes() {
   return (
@@ -18,17 +18,17 @@ function Routes() {
           restricted={false}
           exact
           path="/"
-          component={ListaDeRestaurantes}
+          component={RestaurantsList}
         />
         <PublicRoute
           restricted={false}
-          path="/restaurantes/:id"
-          component={Restaurante}
+          path="/restaurants/:id"
+          component={Restaurant}
         />
         <PublicRoute restricted exact path="/login" component={Login} />
-        <PublicRoute restricted exact path="/sign-up" component={SignUp} />
-        <PrivateRoute path="/perfil" exact component={Perfil} />
-        <PrivateRoute path="/my-scheduling" exact component={MyScheduling} />
+        <PublicRoute restricted exact path="/signup" component={SignUp} />
+        <PrivateRoute path="/profile" exact component={Profile} />
+        <PrivateRoute path="/reservations" exact component={Reservations} />
       </Switch>
     </BrowserRouter>
   );

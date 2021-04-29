@@ -69,7 +69,7 @@ export const CreateAccountLink = styled.div`
   }
 `;
 
-export const Texto = styled.div`
+export const Text = styled.div`
   padding: 50px;
 
   h2 {
