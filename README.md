@@ -7,9 +7,7 @@
  
 [API Repo](https://github.com/danielmarques12/mesavip-api)
 
-[The website](http://mesavip.gq)
+[The Website](http://mesavip.gq)
 ###### It may take a few seconds to load, due to the free hosting.
-###### Pode Levar alguns segundos pra carregar, devido a hospedagem gratuita
-
 
 ###### Personal project for studying and portfolio purposes.
