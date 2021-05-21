@@ -2,13 +2,12 @@
   <img alt="Mesavip" title="Mesavip" src=".github/logo.png" width="300px" />
 </h1>
 
-### Mesavip é uma aplicação de agendamentos de mesas para restaurantes.
+### Mesavip helps you making reservations in your favorite restaurants.
 
  
-[Repositório da API](https://github.com/danielmarques12/mesavip-api)
+[API Repo](https://github.com/danielmarques12/mesavip-api)
 
-[Acesse o site](http://mesavip.gq) 
-###### Pode Levar alguns segundos pra carregar, devido a hospedagem gratuita
+[The Website](http://mesavip.gq)
+###### It may take a few seconds to load, due to the free hosting.
 
-
-###### Projeto pessoal para fins de estudo.
+###### Personal project for studying and portfolio purposes.
