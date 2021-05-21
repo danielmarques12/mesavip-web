@@ -6,7 +6,7 @@ async function formData(file, imageType, transformation) {
   data.append('type', imageType);
   data.append('transformation', transformation);
 
-  await api.post('files', data);
+  await api.post('files/upload', data);
 }
 
 export async function bannerUpload(file) {

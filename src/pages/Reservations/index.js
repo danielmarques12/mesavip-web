@@ -7,7 +7,8 @@ export default function Reservations() {
   const [reservations, setReservations] = useState([]);
 
   useEffect(
-    () => api.get('reservations').then((item) => setReservations(item.data)),
+    () =>
+      api.get('reservations/list').then((item) => setReservations(item.data)),
     []
   );
 

@@ -28,6 +28,11 @@ export default function Header() {
             <li>Restaurants</li>
           </ul>
         </a>
+        <a href="/">
+          <ul>
+            <li>Used Technologies</li>
+          </ul>
+        </a>
         <a href="/reservations">
           <ul>
             <li>My reservations</li>

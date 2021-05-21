@@ -23,9 +23,9 @@ export default function Login(props) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const response = await api.post('sessions', user);
+    const response = await api.post('users/login', user);
     login(response.data.token);
-    setUserType(response.data.userType);
+    setUserType(response.data.user.type);
 
     window.location.href = '../';
   }

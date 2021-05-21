@@ -9,7 +9,7 @@ export default function Images(props) {
   const { restaurant_id } = props;
 
   useEffect(() => {
-    api.post(`images/${restaurant_id}`, { type: 'galeria' }).then((item) => {
+    api.get(`files/list/${restaurant_id}/galeria`).then((item) => {
       setBigImage(item.data.shift());
       setImages(item.data);
     });

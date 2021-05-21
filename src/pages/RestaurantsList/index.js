@@ -20,7 +20,7 @@ export default function RestaurantsList() {
 
   useEffect(
     () =>
-      api.get('restaurants/list').then((response) => {
+      api.get('restaurants').then((response) => {
         setRestaurants(response.data);
       }),
     []
@@ -42,7 +42,7 @@ export default function RestaurantsList() {
                 <strong>{restaurant.name}</strong>
                 <div className="div-nota">
                   <FaStar color="#fb0" />
-                  <span>{restaurant.average}</span>
+                  <span>{restaurant.average_rate}</span>
                 </div>
               </div>
               <ProductDescription>

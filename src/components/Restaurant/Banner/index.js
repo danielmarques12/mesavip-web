@@ -8,7 +8,7 @@ export default function Banner(props) {
 
   useEffect(() => {
     api
-      .post(`images/${restaurant_id}`, { type: 'banner' })
+      .get(`files/list/${restaurant_id}/banner`)
       .then((item) => setBanner(item.data[0].path));
   }, []);
 
