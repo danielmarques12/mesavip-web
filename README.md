@@ -5,7 +5,7 @@
 ### Mesavip helps you making reservations in your favorite restaurants.
 
  
-[API Repo](https://github.com/danielmarques12/mesavip-api)
+[API Repo](https://github.com/danielmarques12/mesavip-api-tsc)
 
 [The Website](http://mesavip.gq)
 ###### It may take a few seconds to load, due to the free hosting.
