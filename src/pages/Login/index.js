@@ -64,7 +64,7 @@ export default function Login(props) {
         <Separator />
 
         <CreateAccountLink>
-          <a href="/sign-up"> Create new account </a>
+          <a href="/signup"> Create new account </a>
         </CreateAccountLink>
       </Form>
     </Container>
