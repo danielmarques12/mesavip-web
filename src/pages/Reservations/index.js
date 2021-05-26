@@ -18,6 +18,10 @@ export default function Reservations() {
       .then(document.location.reload());
   }
 
+  // Display reservations as a row list?
+  // Display reservations as a row list?
+  // Display reservations as a row list?
+
   return (
     <Container>
       <h3>My reservations</h3>
