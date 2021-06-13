@@ -43,7 +43,7 @@ export default function Ratings(props) {
 
             <div className="nome-data">
               <span>{rating.client}</span>
-              <span>March 21st, 2021</span>
+              <span>{rating.date}</span>
             </div>
 
             <Stars numberOfStars={rating.rate} starSize={16} />

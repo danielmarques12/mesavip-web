@@ -25,6 +25,7 @@ export default function Agendamento(props) {
       )
       .then((item) => {
         setHours(item.data);
+        setSelectedHour(item.data[0].id);
       });
 
   const handleDateChange = (date) => {
