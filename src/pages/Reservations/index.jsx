@@ -14,7 +14,7 @@ export default function Reservations() {
 
   function handleClick(reservation_id) {
     return api
-      .delete(`reservations/${reservation_id}`)
+      .delete(`reservations/cancel/${reservation_id}`)
       .then(document.location.reload());
   }
 

@@ -27,9 +27,9 @@ export default function SignUp(props) {
   return (
     <Container>
       <Text>
-        <h2>MESAVIP</h2>
         <h3>
-          Mesavip helps you making reservations in your favorite restaurants.
+          <span>MESAVIP</span> helps you making reservations in your favorite
+          restaurants.
         </h3>
       </Text>
 
@@ -46,34 +46,22 @@ export default function SignUp(props) {
           placeholder="Email"
           type="email"
         />
-
         <Input
           value={user.cpf}
           onChange={(event) => setUser({ ...user, cpf: event.target.value })}
           placeholder="CPF"
           type="text"
         />
-
-        <Input
-          value={user.cnpj}
-          onChange={(event) => setUser({ ...user, cnpj: event.target.value })}
-          placeholder="CNPJ"
-          type="text"
-        />
-
         <Input
           value={user.password}
           onChange={(event) =>
             setUser({ ...user, password: event.target.value })
           }
-          placeholder="Senha"
+          placeholder="Password"
           type="password"
         />
-
-        <SubmitInput type="submit" value="Cadastrar" />
-
+        <SubmitInput type="submit" value="Sign Up" />
         <Separator />
-
         <CreateAccountLink>
           <a href="/login"> Already have an account? </a>
         </CreateAccountLink>

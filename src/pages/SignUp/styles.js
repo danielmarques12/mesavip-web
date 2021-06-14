@@ -7,7 +7,7 @@ export const Container = styled.div`
 export const Form = styled.form`
   background: #fff;
   width: 400px;
-  height: 510px;
+  height: 525px;
   margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
@@ -19,7 +19,7 @@ export const Input = styled.input`
   margin: 0 auto;
   margin-bottom: 15px;
   width: 92.5%;
-  height: 50px;
+  height: 65px;
   padding: 15px;
   font-size: 17px;
   border: 1px solid #dddfe2;
@@ -68,11 +68,12 @@ export const CreateAccountLink = styled.div`
 export const Text = styled.div`
   padding: 50px;
 
-  h2 {
-    color: #bd1414;
-  }
   h3 {
     color: #222;
     font-size: 24px;
+
+    span {
+      color: #bd1414;
+    }
   }
 `;
