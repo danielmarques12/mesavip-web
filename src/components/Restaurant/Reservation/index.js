@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import DayPicker from 'react-day-picker';
 import { Container, Hours, Select, AvailableHours, Button } from './styles';
 import { api } from '../../../services/api';
