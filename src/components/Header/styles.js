@@ -6,23 +6,28 @@ export const Head = styled.header`
   align-items: center;
   padding: 0px 28px 0px 24px;
   background: #fff;
-  height: 75px;
+  height: 80px;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 
   img {
     width: 165px;
-    height: 75px;
+    height: 80px;
   }
 
   nav {
     display: flex;
     align-items: center;
-    height: 75px;
+    height: 80px;
+    overflow: hidden;
 
     a {
       text-decoration: none;
       font-size: 16px;
       color: #000;
-      font-weight: 400;
+      font-weight: 600;
 
       ul {
         cursor: pointer;
@@ -36,7 +41,7 @@ export const Head = styled.header`
 
     .github-link {
       text-align: center;
-      width: 75px;
+      width: 80px;
     }
 
     ul:hover {

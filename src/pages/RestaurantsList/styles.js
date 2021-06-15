@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
   text-align: center;
   margin: 0 auto;
-  width: 1170px;
+  width: 60.94%;
+  height: 780px;
+  display: table;
 
   h3 {
-    font-size: 15px;
+    font-size: 17px;
     text-align: left;
     color: #000000;
     margin: 10px 0;
@@ -15,7 +17,7 @@ export const Container = styled.div`
 
 export const RestaurantList = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(283px, 1fr));
   margin: 0 auto;
 `;
 
@@ -28,6 +30,10 @@ export const RestaurantCard = styled.div`
   border-radius: 5px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   cursor: pointer;
+
+  &:hover {
+    background: #f5f6f8;
+  }
 `;
 
 export const Product = styled.div`
