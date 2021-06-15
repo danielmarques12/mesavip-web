@@ -1,7 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { api } from '../../services/api';
 import { login, setUserType } from '../../services/auth';
@@ -15,9 +11,7 @@ import {
   CreateAccountLink,
 } from './styles';
 
-function POST_SESSIONS(user) {}
-
-export default function Login(props) {
+export default function SignIn() {
   const [user, setUser] = useState({});
 
   async function handleSubmit(event) {
@@ -33,9 +27,9 @@ export default function Login(props) {
   return (
     <Container>
       <Text>
-        <h2>MESAVIP</h2>
         <h3>
-          Mesavip helps you making reservations in your favorite restaurants.
+          <span>MESAVIP</span> helps you making reservations in your favorite
+          restaurants.
         </h3>
       </Text>
 
@@ -57,14 +51,14 @@ export default function Login(props) {
           type="password"
         />
 
-        <SubmitInput type="submit" value="Login" />
+        <SubmitInput type="submit" value="Sign in" />
 
         <a href="/#">Forgot your password?</a>
 
         <Separator />
 
         <CreateAccountLink>
-          <a href="/signup"> Create new account </a>
+          <a href="/signup"> Create a new account </a>
         </CreateAccountLink>
       </Form>
     </Container>

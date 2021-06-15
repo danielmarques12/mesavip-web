@@ -1,5 +1,3 @@
-/* eslint-disable no-return-assign */
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { api } from '../../services/api';

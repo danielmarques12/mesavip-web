@@ -1,7 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { api } from '../../services/api';
 import {
@@ -14,7 +10,7 @@ import {
   CreateAccountLink,
 } from './styles';
 
-export default function SignUp(props) {
+export default function SignUp() {
   const [user, setUser] = useState({});
 
   const handleSubmit = (event) => {
@@ -40,18 +36,21 @@ export default function SignUp(props) {
           placeholder="Name"
           type="text"
         />
+
         <Input
           value={user.email}
           onChange={(event) => setUser({ ...user, email: event.target.value })}
           placeholder="Email"
           type="email"
         />
+
         <Input
           value={user.cpf}
           onChange={(event) => setUser({ ...user, cpf: event.target.value })}
           placeholder="CPF"
           type="text"
         />
+
         <Input
           value={user.password}
           onChange={(event) =>
@@ -60,10 +59,13 @@ export default function SignUp(props) {
           placeholder="Password"
           type="password"
         />
-        <SubmitInput type="submit" value="Sign Up" />
+
+        <SubmitInput type="submit" value="Sign up" />
+
         <Separator />
+
         <CreateAccountLink>
-          <a href="/login"> Already have an account? </a>
+          <a href="/signin"> Already have an account? Sign in </a>
         </CreateAccountLink>
       </Form>
     </Container>

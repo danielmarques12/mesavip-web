@@ -3,7 +3,7 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 import PrivateRoute from './components/Routes/PrivateRoute';
 import PublicRoute from './components/Routes/PublicRoute';
 
-import Login from './pages/Login';
+import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
 import Restaurant from './pages/Restaurant';
@@ -25,7 +25,7 @@ function Routes() {
           path="/restaurants/:id"
           component={Restaurant}
         />
-        <PublicRoute restricted exact path="/login" component={Login} />
+        <PublicRoute restricted exact path="/signin" component={SignIn} />
         <PublicRoute restricted exact path="/signup" component={SignUp} />
         <PrivateRoute path="/profile" exact component={Profile} />
         <PrivateRoute path="/reservations" exact component={Reservations} />

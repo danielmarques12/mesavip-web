@@ -26,6 +26,7 @@ export const Head = styled.header`
 
       ul {
         cursor: pointer;
+
         li {
           list-style-type: none;
           padding: 30px 16px;
@@ -47,18 +48,20 @@ export const Head = styled.header`
       margin-left: 12px;
 
       button {
-        font-size: 16px;
-        font-weight: 700;
-        padding: 7.5px 10px;
+        font-size: 17px;
+        font-weight: bold;
+        width: 160px;
+        height: 55px;
         border-radius: 4px;
-        border: 2px solid #db1313;
-        color: #db1313;
+        border: 2px solid #000;
+        color: #000;
         background: #fff;
       }
 
       button:hover {
-        background: #db1313;
-        color: #fff;
+        background: #f3f6fa;
+        /* color: #fff; */
+        font-weight: bold;
       }
 
       a:nth-child(2) {

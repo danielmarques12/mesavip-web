@@ -4,11 +4,11 @@ import { logout } from '../../../services/auth';
 export default function ButtonsGuest() {
   return (
     <div className="buttons">
-      <a href="/login">
-        <button type="button">Login</button>
+      <a href="/signin">
+        <button type="button">Sign in</button>
       </a>
       <a href="/signup">
-        <button type="button">Create an account</button>
+        <button type="button">Sign up</button>
       </a>
     </div>
   );
