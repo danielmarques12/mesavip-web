@@ -20,6 +20,7 @@ export const AvailableHours = styled.div`
   margin: 0 auto;
   height: 65px;
   width: 220px;
+  font-size: 18px;
 `;
 
 export const Hours = styled.div`
@@ -46,7 +47,8 @@ export const Button = styled.button`
   border-radius: 5px;
   border: 1px solid transparent;
   color: #fff;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
   width: 100%;
+  height: 65px;
 `;

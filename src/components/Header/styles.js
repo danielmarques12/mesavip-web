@@ -27,7 +27,7 @@ export const Head = styled.header`
       text-decoration: none;
       font-size: 16px;
       color: #000;
-      font-weight: 600;
+      font-weight: 300;
 
       ul {
         cursor: pointer;
@@ -54,7 +54,7 @@ export const Head = styled.header`
 
       button {
         font-size: 17px;
-        font-weight: bold;
+        font-weight: 400;
         width: 160px;
         height: 55px;
         border-radius: 4px;
@@ -65,8 +65,6 @@ export const Head = styled.header`
 
       button:hover {
         background: #f3f6fa;
-        /* color: #fff; */
-        font-weight: bold;
       }
 
       a:nth-child(2) {

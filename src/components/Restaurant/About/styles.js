@@ -36,17 +36,17 @@ export const Container = styled.div`
         }
 
         a {
-          padding: 7.5px;
-          border: 1px solid #db1313;
+          padding: 15px;
+          border: 1px solid black;
           border-radius: 5px;
           text-decoration: none;
-          color: #db1313;
+          color: #000;
           font-weight: bold;
         }
 
         a:hover {
-          background: #db1313;
-          color: #fff;
+          background: #f3f6fa;
+          color: #000;
         }
       }
     }

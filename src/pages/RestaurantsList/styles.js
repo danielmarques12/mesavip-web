@@ -46,7 +46,7 @@ export const Product = styled.div`
   .div-produto-titulo-e-nota {
     text-decoration: none;
     color: #000000;
-    font-weight: bold;
+    font-weight: 300;
     font-size: 16px;
     margin: 0 3px;
     padding: 5px 0;
@@ -56,6 +56,7 @@ export const Product = styled.div`
     .div-nota {
       display: flex;
       justify-content: space-between;
+      font-weight: 600;
     }
 
     strong {

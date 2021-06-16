@@ -13,7 +13,7 @@ export default function Stars({ numberOfStars, starSize }) {
   }
 
   for (let i = 1; i <= averageInteger; i++) {
-    stars.push(<FaStar size={starSize} color="fb0" key={i} />);
+    stars.push(<FaStar size={starSize} color="#fb0" key={i} />);
   }
 
   return (

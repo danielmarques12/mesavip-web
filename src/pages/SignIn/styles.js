@@ -80,6 +80,7 @@ export const Text = styled.div`
   h3 {
     color: #222;
     font-size: 24px;
+    font-weight: 400;
 
     span {
       color: #bd1414;

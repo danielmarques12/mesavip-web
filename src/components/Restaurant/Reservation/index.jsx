@@ -80,7 +80,7 @@ export default function Agendamento(props) {
       </AvailableHours>
 
       <Button type="submit" onClick={handleSubmit}>
-        RESERVATE
+        Reservate
       </Button>
     </Container>
   );

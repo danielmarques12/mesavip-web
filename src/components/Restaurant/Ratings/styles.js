@@ -15,13 +15,13 @@ export const Average = styled.div`
 
   h3 {
     font-size: 50px;
-    font-weight: 800;
+    font-weight: 500;
     margin-top: 20px;
   }
 
   span {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
   }
 
   p {
@@ -50,7 +50,7 @@ export const NumberOfComments = styled.div`
 export const Rating = styled.div`
   ${Padding};
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 400;
 
   .nome-data {
     display: flex;
