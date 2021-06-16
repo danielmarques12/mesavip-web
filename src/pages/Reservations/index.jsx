@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaRegTrashAlt } from 'react-icons/fa';
-import { Container, ReservationsList, DeleteReservation } from './styles';
+import { Container } from './styles';
 import { api } from '../../services/api';
 
 export default function Reservations() {
@@ -18,28 +18,28 @@ export default function Reservations() {
       .then(document.location.reload());
   }
 
-  // Display reservations as a row list?
-  // Display reservations as a row list?
-  // Display reservations as a row list?
-
   return (
     <Container>
-      <h3>My reservations</h3>
-      <ReservationsList>
-        <ul>
-          {reservations.map((reservation) => (
-            <li key={reservation.id}>
-              <span>{reservation.restaurant}</span>
-              <span>{reservation.hour}</span>
+      <h1>My reservations</h1>
 
-              <DeleteReservation onClick={() => handleClick(reservation.id)}>
-                <span>Cancel</span>
-                <FaRegTrashAlt />
-              </DeleteReservation>
-            </li>
-          ))}
-        </ul>
-      </ReservationsList>
+      <table cellSpacing={0}>
+        <tr>
+          <th>Restaurant</th>
+          <th>Address</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Cancel reservation</th>
+        </tr>
+        {reservations.map((reservation) => (
+          <tr>
+            <td>{reservation.restaurant}</td>
+            <td>{reservation.address}</td>
+            <td>{reservation.date}</td>
+            <td>{reservation.hour}</td>
+            <td>Cancel reservation</td>
+          </tr>
+        ))}
+      </table>
     </Container>
   );
 }

@@ -74,6 +74,7 @@ export const Product = styled.div`
 export const ProductDescription = styled.div`
   color: #000000;
   font-size: 14px;
+  font-weight: 300;
   display: flex;
   justify-content: space-between;
   margin: 7.5px 3px 0 3px;
