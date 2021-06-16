@@ -33,6 +33,6 @@ export const Container = styled.div`
   th,
   td {
     border-collapse: collapse;
-    padding: 15px;
+    padding: 15px 30px;
   }
 `;
