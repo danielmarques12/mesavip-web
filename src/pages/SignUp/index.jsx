@@ -15,8 +15,8 @@ export default function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    return api.post('users', user).then(() => {
-      window.location.href = '/login';
+    return api.post('users/create', user).then(() => {
+      window.location.href = '/signin';
     });
   };
 

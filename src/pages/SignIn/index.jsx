@@ -17,7 +17,7 @@ export default function SignIn() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const response = await api.post('users/login', user);
+    const response = await api.post('users/signin', user);
     login(response.data.token);
     setUserType(response.data.user.type);
 
