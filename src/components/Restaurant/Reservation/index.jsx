@@ -25,7 +25,7 @@ export default function Agendamento(props) {
       )
       .then((item) => {
         setHours(item.data);
-        setSelectedHour(item.data[0].id);
+        setSelectedHour(item.data[0].hour);
       });
 
   const handleDateChange = (date) => {
@@ -39,7 +39,8 @@ export default function Agendamento(props) {
       time: selectedHour,
       date: selectedDate.toDateString(),
     });
-    getAvailableHours(selectedDate);
+    document.location.reload();
+    // getAvailableHours(selectedDate);
   };
 
   const modifiers = {
@@ -73,7 +74,7 @@ export default function Agendamento(props) {
             }}
           >
             {hours.map((hour) => (
-              <option key={hour.id} value={hour.id}>
+              <option key={hour.id} value={hour.hour}>
                 {hour.hour}
               </option>
             ))}
