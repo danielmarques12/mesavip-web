@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { api } from '../../services/api';
-import { login, setUserType } from '../../services/auth';
+import { login } from '../../services/auth';
 import {
   Container,
   Form,
@@ -19,7 +19,6 @@ export default function SignIn() {
 
     const response = await api.post('users/signin', user);
     login(response.data.token);
-    setUserType(response.data.user.type);
 
     window.location.href = '../';
   }

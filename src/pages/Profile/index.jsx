@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ImageUpload from '../../components/Profile/ImageUpload';
-import { isRestaurant } from '../../services/auth';
 import { Input, SubmitInput } from '../../components/ComponentStyles';
 import { api } from '../../services/api';
 import {
@@ -47,12 +46,12 @@ export default function Profile() {
         <DeleteUser />
       </ProfileCard>
 
-      {isRestaurant() ? (
+      {/* {isRestaurant() ? (
         <Upload>
           <ImageUpload imageType="banner" multipleFiles={false} />
           <ImageUpload imageType="galeria" multipleFiles />
         </Upload>
-      ) : null}
+      ) : null} */}
     </Container>
   );
 }
