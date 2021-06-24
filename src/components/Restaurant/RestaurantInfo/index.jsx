@@ -16,7 +16,7 @@ export default function RestaurantInfo(props) {
   useEffect(
     () =>
       api.get(`restaurants/${restaurant_id}`).then((item) => {
-        setRestaurant(item.data[0]);
+        setRestaurant(item.data);
       }),
     []
   );
@@ -35,7 +35,7 @@ export default function RestaurantInfo(props) {
         <Rate>
           <div className="nota">
             <FaStar color="#fb0" size={17} />
-            <span> {restaurant.average_rate} </span>
+            <span> {restaurant.avg_rating} </span>
           </div>
           <p> {restaurant.total_ratings} Ratings</p>
         </Rate>
@@ -52,7 +52,7 @@ export default function RestaurantInfo(props) {
       />
 
       <Ratings
-        average={restaurant.average_rate}
+        average={restaurant.avg_rating}
         totalratings={restaurant.total_ratings}
         restaurant_id={restaurant_id}
       />

@@ -19,7 +19,7 @@ export default function Stars({ numberOfStars, starSize }) {
   return (
     <>
       {stars}
-      {isHalfStarNeeded() ? <FaStarHalf size={starSize} color="fb0" /> : null}
+      {isHalfStarNeeded() ? <FaStarHalf size={starSize} color="#fb0" /> : null}
     </>
   );
 }

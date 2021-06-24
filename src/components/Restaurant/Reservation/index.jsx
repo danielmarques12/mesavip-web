@@ -21,7 +21,7 @@ export default function Agendamento(props) {
   const getAvailableHours = (date) =>
     api
       .get(
-        `restaurants/tables/available/${restaurant_id}/${date.toISOString()}`
+        `restaurants/available-hours/${restaurant_id}/${date.toDateString()}`
       )
       .then((item) => {
         setHours(item.data);
@@ -34,9 +34,11 @@ export default function Agendamento(props) {
   };
 
   const handleSubmit = async () => {
-    await api.post(
-      `/reservations/create/${restaurant_id}/${selectedHour}/${selectedDate.toISOString()}`
-    );
+    await api.post('/reservations/create', {
+      restaurant_id,
+      time: selectedHour,
+      date: selectedDate.toDateString(),
+    });
     getAvailableHours(selectedDate);
   };
 

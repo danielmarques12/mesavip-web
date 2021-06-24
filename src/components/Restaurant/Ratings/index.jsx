@@ -17,7 +17,7 @@ export default function Ratings(props) {
   const { average, totalratings, restaurant_id } = props;
 
   useEffect(() => {
-    api.get(`restaurants/ratings/${restaurant_id}`).then((item) => {
+    api.get(`ratings/list/${restaurant_id}`).then((item) => {
       setRatings(item.data);
     });
   }, []);
@@ -46,7 +46,7 @@ export default function Ratings(props) {
               <span>{rating.date}</span>
             </div>
 
-            <Stars numberOfStars={rating.rate} starSize={16} />
+            <Stars numberOfStars={rating.rating} starSize={16} />
 
             <Comment>
               <p>{rating.comment}</p>
