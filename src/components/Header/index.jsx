@@ -3,7 +3,7 @@ import { FaGithub } from 'react-icons/fa';
 import { Head } from './styles';
 import ButtonsGuest from './ButtonsGuest';
 import ButtonsUser from './ButtonsUser';
-import { isAuthenticated, isRestaurant } from '../../services/auth';
+import { isAuthenticated } from '../../services/auth';
 
 export default function Header() {
   return (
@@ -36,7 +36,7 @@ export default function Header() {
           </ul>
         </a>
 
-        {isAuthenticated() && !isRestaurant() ? (
+        {isAuthenticated() ? (
           <a href="/reservations">
             <ul>
               <li>My reservations</li>

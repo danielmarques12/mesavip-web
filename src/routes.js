@@ -5,7 +5,7 @@ import PublicRoute from './components/Routes/PublicRoute';
 
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import Profile from './pages/Profile';
+// import Profile from './pages/Profile';
 import Restaurant from './pages/Restaurant';
 import RestaurantsList from './pages/RestaurantsList';
 import Reservations from './pages/Reservations';
@@ -27,7 +27,7 @@ function Routes() {
         />
         <PublicRoute restricted exact path="/signin" component={SignIn} />
         <PublicRoute restricted exact path="/signup" component={SignUp} />
-        <PrivateRoute path="/profile" exact component={Profile} />
+        {/* <PrivateRoute path="/profile" exact component={Profile} /> */}
         <PrivateRoute path="/reservations" exact component={Reservations} />
       </Switch>
     </BrowserRouter>
