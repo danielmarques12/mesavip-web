@@ -34,13 +34,13 @@ export default function RestaurantsList() {
             key={restaurant.id}
           >
             <Product>
-              <img src={restaurant.path} alt={restaurant.name} />
+              <img src={restaurant.image} alt={restaurant.name} />
 
               <div className="div-produto-titulo-e-nota">
                 <strong>{restaurant.name}</strong>
                 <div className="div-nota">
                   <FaStar color="#fb0" />
-                  <span>{restaurant.average_rate}</span>
+                  <span>{restaurant.avg_rating}</span>
                 </div>
               </div>
               <ProductDescription>

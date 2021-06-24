@@ -12,7 +12,7 @@ export const Container = styled.div`
   }
 
   table {
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
   }
 
   th {
