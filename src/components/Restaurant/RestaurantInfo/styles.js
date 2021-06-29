@@ -5,6 +5,7 @@ const Padding = 'padding: 10px 10px 0px 10px;';
 export const Container = styled.div`
   background: #fff;
   height: fit-content;
+  border-radius: 10px;
 `;
 
 export const Info = styled.div`

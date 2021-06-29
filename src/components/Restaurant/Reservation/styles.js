@@ -9,6 +9,7 @@ export const Container = styled.div`
   ${Padding}
   width: 320px;
   height: 430px;
+  border-radius: 10px;
 
   button:hover {
     background: #be0a0a;

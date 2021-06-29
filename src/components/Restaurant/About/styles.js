@@ -7,6 +7,7 @@ export const Container = styled.div`
 
   span {
     font-weight: bold;
+    font-size: 17px;
   }
 
   .sobre {

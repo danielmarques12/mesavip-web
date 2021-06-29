@@ -14,7 +14,14 @@ export default function Banner(props) {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <img src={banner} alt="Restaurant banner" />
+      <img
+        src={banner}
+        alt="Restaurant banner"
+        style={{
+          borderBottomLeftRadius: '10px',
+          borderBottomRightRadius: '10px',
+        }}
+      />
     </div>
   );
 }
