@@ -4,6 +4,20 @@ export const Container = styled.div`
   text-align: center;
 `;
 
+export const Text = styled.div`
+  padding: 50px;
+
+  h3 {
+    color: #222;
+    font-size: 24px;
+    font-weight: 400;
+
+    span {
+      color: #bd1414;
+    }
+  }
+`;
+
 export const Form = styled.form`
   background: #fff;
   width: 460px;
@@ -12,13 +26,18 @@ export const Form = styled.form`
   border-radius: 8px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   padding-top: 25px;
+
+  @media (max-width: 768px) {
+    width: 350px;
+    margin-bottom: 25px;
+  }
 `;
 
 export const Input = styled.input`
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
-  width: 400px;
+  width: 86.96%;
   height: 70px;
   padding: 15px;
   font-size: 17px;
@@ -53,7 +72,7 @@ export const CreateAccountLink = styled.div`
     text-decoration: none;
     display: block;
     margin: 0 auto;
-    width: 400px;
+    width: 86.96%;
     height: 70px;
     padding: 20px;
     font-size: 20px;
@@ -65,20 +84,6 @@ export const CreateAccountLink = styled.div`
 
     &:hover {
       background-color: #399e24;
-    }
-  }
-`;
-
-export const Text = styled.div`
-  padding: 50px;
-
-  h3 {
-    color: #222;
-    font-size: 24px;
-    font-weight: 400;
-
-    span {
-      color: #bd1414;
     }
   }
 `;

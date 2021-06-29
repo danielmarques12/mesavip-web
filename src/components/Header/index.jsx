@@ -1,51 +1,61 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import { FaGithub } from 'react-icons/fa';
-import { Head } from './styles';
+import { FaGithub, FaBars, FaTimes } from 'react-icons/fa';
+import { Nav } from './styles';
 import ButtonsGuest from './ButtonsGuest';
 import ButtonsUser from './ButtonsUser';
 import { isAuthenticated } from '../../services/auth';
 
 export default function Header() {
   return (
-    <Head>
-      <img src="https://bit.ly/3sERTuX" alt="Mesavip logo" />
-      <nav>
-        <a
-          href="https://bit.ly/3tIw4v3"
-          alt="Link to the application github repo"
-          target="_blank"
-          rel="noreferrer"
-          className="github-link"
-        >
-          <ul>
-            <li>
-              <FaGithub size={25} color="#000" />
-            </li>
-          </ul>
-        </a>
+    <Nav>
+      <input type="checkbox" className="checkbox" id="checkbox" />
+      <label htmlFor="checkbox" className="nav_toggle">
+        <FaBars size={25} color="#000" className="menu" />
+        <FaTimes size={25} color="#000" className="close" />
+      </label>
 
-        <a href="/">
-          <ul>
-            <li>Restaurants</li>
-          </ul>
-        </a>
+      <ul className="nav_menu">
+        <li>
+          <a href="/">
+            <img src="https://bit.ly/3sERTuX" alt="Mesavip logo" />
+          </a>
+        </li>
 
-        <a href="/">
-          <ul>
-            <li>Used Technologies</li>
-          </ul>
-        </a>
+        <li className="on-hover">
+          <a
+            href="https://bit.ly/3tIw4v3"
+            alt="Application github repo"
+            target="_blank"
+            rel="noreferrer"
+            className="github-link"
+          >
+            <FaGithub size={25} color="#000" />
+          </a>
+        </li>
+
+        <li className="on-hover">
+          <a className="text" href="/">
+            Restaurants
+          </a>
+        </li>
 
         {isAuthenticated() ? (
-          <a href="/reservations">
-            <ul>
-              <li>My reservations</li>
-            </ul>
-          </a>
-        ) : null}
+          <>
+            <li className="on-hover">
+              <a href="/reservations">My reservations</a>
+            </li>
 
-        {isAuthenticated() ? <ButtonsUser /> : <ButtonsGuest />}
-      </nav>
-    </Head>
+            <li>
+              <ButtonsUser />
+            </li>
+          </>
+        ) : (
+          <li>
+            <ButtonsGuest />
+          </li>
+        )}
+      </ul>
+    </Nav>
   );
 }

@@ -2,6 +2,21 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   text-align: center;
+  margin-bottom: 45px;
+`;
+
+export const Text = styled.div`
+  padding: 50px;
+
+  h3 {
+    color: #222;
+    font-size: 24px;
+    font-weight: 400;
+
+    span {
+      color: #bd1414;
+    }
+  }
 `;
 
 export const Form = styled.form`
@@ -16,13 +31,17 @@ export const Form = styled.form`
   a {
     color: #db1313;
   }
+
+  @media (max-width: 768px) {
+    width: 350px;
+  }
 `;
 
 export const Input = styled.input`
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
-  width: 400px;
+  width: 86.96%;
   height: 70px;
   padding: 15px;
   font-size: 17px;
@@ -58,7 +77,7 @@ export const CreateAccountLink = styled.div`
     display: block;
     margin: 0 auto;
     margin-bottom: 15px;
-    width: 400px;
+    width: 86.96%;
     height: 70px;
     padding: 20px;
     font-size: 20px;
@@ -70,20 +89,6 @@ export const CreateAccountLink = styled.div`
 
     &:hover {
       background-color: #399e24;
-    }
-  }
-`;
-
-export const Text = styled.div`
-  padding: 50px;
-
-  h3 {
-    color: #222;
-    font-size: 24px;
-    font-weight: 400;
-
-    span {
-      color: #bd1414;
     }
   }
 `;

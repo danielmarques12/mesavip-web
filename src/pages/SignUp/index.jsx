@@ -24,7 +24,7 @@ export default function SignUp() {
     <Container>
       <Text>
         <h3>
-          <span>MESAVIP</span> helps you making reservations in your favorite
+          <span>MESAVIP</span> helps you to make reservations in your favorite
           restaurants.
         </h3>
       </Text>
@@ -65,7 +65,7 @@ export default function SignUp() {
         <Separator />
 
         <CreateAccountLink>
-          <a href="/signin"> Already have an account? Sign in </a>
+          <a href="/signin"> Already have an account? </a>
         </CreateAccountLink>
       </Form>
     </Container>

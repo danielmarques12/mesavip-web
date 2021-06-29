@@ -27,7 +27,7 @@ export default function SignIn() {
     <Container>
       <Text>
         <h3>
-          <span>MESAVIP</span> helps you making reservations in your favorite
+          <span>MESAVIP</span> helps you to make reservations in your favorite
           restaurants.
         </h3>
       </Text>
