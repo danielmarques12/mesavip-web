@@ -4,9 +4,9 @@ export const Nav = styled.nav`
   background: #fff;
   overflow: hidden;
   --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-  var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 
   img {
     width: 165px;
@@ -41,7 +41,6 @@ export const Nav = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
 
     li {
       cursor: pointer;
@@ -69,12 +68,11 @@ export const Nav = styled.nav`
   .github-link {
     text-align: center;
     width: 80px;
+    padding: 0 20px;
   }
 
-
-
   .on-hover {
-    
+    padding: 10px 5px;
 
     &:hover {
       background: #f7f7f7;
@@ -83,6 +81,7 @@ export const Nav = styled.nav`
 
   .buttons {
     margin-bottom: 25px;
+    margin-left: 30px;
 
     button {
       font-size: 17px;
@@ -103,50 +102,54 @@ export const Nav = styled.nav`
       margin-bottom: 15px;
     }
   }
-}
 
-// Toggle the hamburger menu in mobile view
-#checkbox:checked ~ ul.nav_menu li {
-  display: block;
-}
+  // Toggle the hamburger menu in mobile view
+  #checkbox:checked ~ ul.nav_menu li {
+    display: block;
+  }
 
-//Change from menu to close icon on tap
-#checkbox:checked ~ label.nav_toggle .close {
-  display: block;
-}
+  //Change from menu to close icon on tap
+  #checkbox:checked ~ label.nav_toggle .close {
+    display: block;
+  }
 
-#checkbox:checked ~ label.nav_toggle .menu {
-  display: none;
-}
+  #checkbox:checked ~ label.nav_toggle .menu {
+    display: none;
+  }
 
-// Desktop view
-@media only screen and (min-width: 768px) {
-  & {
-    .nav_toggle {
-      display: none;
-    }
-
-    .nav_menu {
-      flex-direction: row;
-
-      li {
-        display: block;
+  // Desktop view
+  @media only screen and (min-width: 768px) {
+    & {
+      .nav_toggle {
+        display: none;
       }
-    }
 
-    .buttons {
-      margin-right: 12px;
-      margin-bottom: 0;
-      display: flex;
-      
-      li:nth-child(1) {
-      margin-bottom: 0;
-    }
+      .nav_menu {
+        flex-direction: row;
 
-      li:nth-child(2) {
-      margin-left: 16px;
-      margin-bottom: 0;
-    }
+        li {
+          display: block;
+        }
+      }
+
+      .on-hover {
+        padding: 30px 16px;
+      }
+
+      .buttons {
+        margin-right: 12px;
+        margin-bottom: 0;
+        display: flex;
+
+        li:nth-child(1) {
+          margin-bottom: 0;
+        }
+
+        li:nth-child(2) {
+          margin-left: 16px;
+          margin-bottom: 0;
+        }
+      }
     }
   }
 `;
