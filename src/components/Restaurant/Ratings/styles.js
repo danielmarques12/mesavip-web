@@ -12,6 +12,7 @@ export const Average = styled.div`
   ${Padding};
   width: 270px;
   text-align: center;
+  margin: 0 auto;
 
   h3 {
     font-size: 50px;
@@ -28,12 +29,17 @@ export const Average = styled.div`
     font-size: 16px;
     margin-top: 12.5px;
   }
+
+  @media only screen and (min-width: 768px) {
+    margin: 0;
+  }
 `;
 
 export const NumberOfComments = styled.div`
   display: flex;
   width: 180px;
   justify-content: space-between;
+  margin: 5px auto;
   ${Padding};
 
   span {
@@ -44,6 +50,10 @@ export const NumberOfComments = styled.div`
 
   svg {
     margin-top: 2.5px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin: 0;
   }
 `;
 
@@ -59,6 +69,10 @@ export const Rating = styled.div`
 
   svg {
     margin-top: 10px;
+  }
+
+  &:last-child {
+    margin-bottom: 40px;
   }
 `;
 

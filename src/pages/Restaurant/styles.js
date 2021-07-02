@@ -2,21 +2,87 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   color: #000;
+  margin: 0 auto;
 
   strong,
   h1 {
     color: #000;
     font-weight: 300;
   }
+
+  .banner {
+    display: none;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .banner {
+      display: block;
+    }
+  }
 `;
 
 export const Main = styled.div`
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 
-  .grid {
-    width: 1200px;
-    display: grid;
-    margin: 0 auto;
-    grid-template-columns: 69% 31%;
+  .flex {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      background: #fff;
+      /* text-align: center; */
+
+      .imagens-pequenas {
+        display: none;
+      }
+    }
+
+    .reservation-bg {
+      background: #fff;
+      height: fit-content;
+
+      @media only screen and (min-width: 768px) {
+        .separator {
+          display: none;
+        }
+      }
+    }
   }
+
+  .ratings {
+    background: #fff;
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin: 0 auto;
+    width: 1200px;
+
+    .flex {
+      width: 1200px;
+      flex-direction: row;
+      margin: 0 auto;
+      gap: 2rem;
+
+      .content {
+        width: 828px;
+
+        .imagens-pequenas {
+          display: grid;
+        }
+      }
+    }
+
+    .ratings {
+      width: 828px;
+    }
+  }
+`;
+
+export const Separator = styled.div`
+  align-items: center;
+  text-align: center;
+  margin: 20px 40px;
+  border-bottom: 1px solid #dadde1;
+  display: flex;
 `;

@@ -54,7 +54,7 @@ export default function Agendamento(props) {
   };
 
   return (
-    <Container>
+    <Container className="reservation">
       <DayPicker
         fromMonth={new Date()}
         toMonth={lastAllowedMonth()}

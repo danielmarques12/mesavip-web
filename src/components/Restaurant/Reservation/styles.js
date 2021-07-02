@@ -45,11 +45,11 @@ export const Select = styled.select`
 export const Button = styled.button`
   background: #db1313;
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 30px;
   border: 1px solid transparent;
   color: #fff;
   font-size: 18px;
   font-weight: 600;
-  width: 100%;
+  width: 90%;
   height: 65px;
 `;

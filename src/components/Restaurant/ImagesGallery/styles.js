@@ -15,7 +15,15 @@ export const Container = styled.div`
     margin-left: 3px;
 
     img {
-      height: 244px;
+      height: 13.5rem;
+      width: 19rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+      img {
+        width: 400px;
+        height: 240px;
+      }
     }
   }
 

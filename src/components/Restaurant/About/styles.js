@@ -3,53 +3,85 @@ import styled from 'styled-components';
 const Padding = 'padding: 10px 120px 0px 30px;';
 
 export const Container = styled.div`
-  ${Padding}
+  text-align: center;
 
   span {
     font-weight: bold;
-    font-size: 17px;
+    font-size: 19px;
   }
 
-  .sobre {
+  .main {
     margin-top: 30px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 
     p {
       font-size: 17px;
+      line-height: 1.5;
     }
 
-    div:nth-child(1) {
-      width: 400px;
+    .sobre {
       text-align: justify;
       font-size: 16px;
+      margin: 0 auto;
+
+      p {
+        width: 19rem;
+      }
     }
 
-    div:nth-child(2) {
-      p {
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
 
-        svg {
-          font-size: 22.5px;
-          margin-right: 10px;
-        }
+      .sobre {
+        margin: 0;
 
-        a {
-          padding: 15px;
-          border: 1px solid black;
-          border-radius: 5px;
-          text-decoration: none;
-          color: #000;
-          font-weight: bold;
-        }
-
-        a:hover {
-          background: #f3f6fa;
-          color: #000;
+        p {
+          width: 400px;
         }
       }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    ${Padding}
+    text-align: unset;
+  }
+`;
+
+export const Contact = styled.div`
+  p {
+    justify-content: center;
+    margin: 35px auto;
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: 22.5px;
+      margin-right: 10px;
+    }
+
+    a {
+      padding: 15px;
+      border: 1px solid black;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    a:hover {
+      background: #f3f6fa;
+      color: #000;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 30px;
+
+    p {
+      margin: 0 0 15px 0;
     }
   }
 `;

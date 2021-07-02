@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Container } from './styles';
 import { api } from '../../../services/api';
 
-export default function Images(props) {
+export default function ImagesGallery(props) {
   const [images, setImages] = useState([]);
   const [bigImage, setBigImage] = useState('');
   const { restaurant_id } = props;
@@ -16,7 +16,7 @@ export default function Images(props) {
   }, []);
 
   return (
-    <Container>
+    <Container className="images-gallery">
       <div className="imagem-grande">
         <img src={bigImage.path} alt="Restaurant's gallery" />
       </div>

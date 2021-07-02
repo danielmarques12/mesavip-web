@@ -23,7 +23,7 @@ export default function Ratings(props) {
   }, []);
 
   return (
-    <Container>
+    <Container className="ratings">
       <Average>
         <span>CUSTOMERS RATINGS</span>
         <h3>{average}</h3>
@@ -31,7 +31,7 @@ export default function Ratings(props) {
         <p> {totalratings} ratings</p>
       </Average>
 
-      <div className="ratings">
+      <div>
         <NumberOfComments>
           <FaRegCommentAlt size={16} />
           <span> {totalratings} Comments </span>
