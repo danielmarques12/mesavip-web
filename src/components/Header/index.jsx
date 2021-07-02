@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { FaGithub, FaBars, FaTimes } from 'react-icons/fa';
-import { Nav } from './styles';
+import { Nav, Separator } from './styles';
 import ButtonsGuest from './ButtonsGuest';
 import ButtonsUser from './ButtonsUser';
 import { isAuthenticated } from '../../services/auth';
@@ -16,7 +16,7 @@ export default function Header() {
       </label>
 
       <ul className="nav_menu">
-        <li>
+        <li className="logo">
           <a href="/">
             <img src="https://bit.ly/3sERTuX" alt="Mesavip logo" />
           </a>

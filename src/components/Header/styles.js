@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
+const shadow = `--tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+0 2px 4px -1px rgba(0, 0, 0, 0.06);
+box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);`;
+
 export const Nav = styled.nav`
   background: #fff;
   overflow: hidden;
-  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  ${shadow}
 
   img {
     width: 165px;
@@ -41,6 +43,11 @@ export const Nav = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
+    ${shadow}
+
+    .logo {
+      margin-left: 10px;
+    }
 
     li {
       cursor: pointer;
@@ -56,7 +63,7 @@ export const Nav = styled.nav`
         text-decoration: none;
         font-size: 16px;
         color: #000;
-        font-weight: 300;
+        font-weight: 400;
       }
 
       .text {
@@ -81,7 +88,7 @@ export const Nav = styled.nav`
 
   .buttons {
     margin-bottom: 25px;
-    margin-left: 30px;
+    margin-top: 20px;
 
     button {
       font-size: 17px;
@@ -119,6 +126,10 @@ export const Nav = styled.nav`
 
   // Desktop view
   @media only screen and (min-width: 768px) {
+    .separator {
+      display: none;
+    }
+
     & {
       .nav_toggle {
         display: none;
@@ -126,6 +137,8 @@ export const Nav = styled.nav`
 
       .nav_menu {
         flex-direction: row;
+        --tw-shadow: 0;
+        box-shadow: 0;
 
         li {
           display: block;
@@ -133,11 +146,13 @@ export const Nav = styled.nav`
       }
 
       .on-hover {
-        padding: 30px 16px;
+        padding: 30px 20px;
       }
 
       .buttons {
         margin-right: 12px;
+        margin-left: 30px;
+        margin-top: 0;
         margin-bottom: 0;
         display: flex;
 
@@ -152,4 +167,10 @@ export const Nav = styled.nav`
       }
     }
   }
+`;
+
+export const Separator = styled.div`
+  margin-bottom: 20px;
+  padding: 0 30px;
+  border: 0.1px solid rgba(0, 0, 0, 0.0275);
 `;
