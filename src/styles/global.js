@@ -10,7 +10,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     min-height: 100%;
-    background: #f3f6fa;
+    background: ${(props) => props.theme.background.primary};
     color: #fff;
   }
 
