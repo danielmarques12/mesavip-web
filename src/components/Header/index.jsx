@@ -1,12 +1,24 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaBars, FaTimes } from 'react-icons/fa';
-import { Nav, Separator } from './styles';
+import { ThemeContext } from 'styled-components';
+import Switch from 'react-switch';
+import { Nav } from './styles';
 import ButtonsGuest from './ButtonsGuest';
 import ButtonsUser from './ButtonsUser';
 import { isAuthenticated } from '../../services/auth';
 
-export default function Header() {
+export default function Header({ toggleTheme }) {
+  const { colors, title, logo } = useContext(ThemeContext);
+  const switchIconStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '88.75%',
+    fontSize: 25,
+  };
+
   return (
     <Nav>
       <input type="checkbox" className="checkbox" id="checkbox" />
@@ -18,7 +30,7 @@ export default function Header() {
       <ul className="nav_menu">
         <li className="logo">
           <a href="/">
-            <img src="https://bit.ly/3sERTuX" alt="Mesavip logo" />
+            <img src={logo} alt="Mesavip logo" />
           </a>
         </li>
 
@@ -30,7 +42,7 @@ export default function Header() {
             rel="noreferrer"
             className="github-link"
           >
-            <FaGithub size={25} color="#000" />
+            <FaGithub size={25} color={colors.primary} />
           </a>
         </li>
 
@@ -43,7 +55,9 @@ export default function Header() {
         {isAuthenticated() ? (
           <>
             <li className="on-hover">
-              <a href="/reservations">My reservations</a>
+              <a href="/reservations" className="text">
+                My reservations
+              </a>
             </li>
 
             <li>
@@ -55,6 +69,25 @@ export default function Header() {
             <ButtonsGuest />
           </li>
         )}
+
+        <li className="switch-theme">
+          <Switch
+            onChange={toggleTheme}
+            checked={title === 'dark'}
+            height={40}
+            width={80}
+            // borderRadius={25}
+            handleDiameter={10}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            uncheckedHandleIcon={<div style={switchIconStyle}>🌞</div>}
+            checkedHandleIcon={<div style={switchIconStyle}>🌑</div>}
+            offColor="#2d333b"
+            onColor="#fff"
+            onHandleColor="#fff"
+            offHandleColor="#2d333b"
+          />
+        </li>
       </ul>
     </Nav>
   );

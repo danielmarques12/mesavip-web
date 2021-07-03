@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+const primary = (props) => props.theme.colors.primary;
+const boxShadow = (props) => props.theme.form.boxShadow;
+const border = (props) => props.theme.form.input.border;
+const formbg = (props) => props.theme.form.background;
+const placeholder = (props) => props.theme.form.input.placeholder;
+const separator = (props) => props.theme.form.separator;
+const primaryButtonbg = (props) => props.theme.form.primaryButton.background;
+const primaryButtonOnHover = (props) => props.theme.form.primaryButton.onHover;
+const secondaryButtonbg = (props) =>
+  props.theme.form.secondaryButton.background;
+const secondaryButtonOnHover = (props) =>
+  props.theme.form.secondaryButton.onHover;
+
 export const Container = styled.div`
   text-align: center;
   margin-bottom: 45px;
@@ -9,27 +22,28 @@ export const Text = styled.div`
   padding: 50px;
 
   h3 {
-    color: #222;
+    color: ${primary};
     font-size: 24px;
     font-weight: 400;
 
     span {
-      color: #bd1414;
+      color: inherit;
+      font-weight: 700;
     }
   }
 `;
 
 export const Form = styled.form`
-  background: #fff;
+  background: ${formbg};
   width: 460px;
   height: 440px;
   margin: 0 auto;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  box-shadow: ${boxShadow};
   padding-top: 20px;
 
   a {
-    color: #db1313;
+    color: ${primary};
   }
 
   @media (max-width: 768px) {
@@ -45,9 +59,14 @@ export const Input = styled.input`
   height: 70px;
   padding: 15px;
   font-size: 17px;
-  border: 1px solid #dddfe2;
+  background: ${formbg};
+  border: 1px solid ${border};
   border-radius: 6px;
-  color: #1d2129;
+  color: ${primary};
+
+  &::placeholder {
+    color: ${placeholder};
+  }
 `;
 
 export const SubmitInput = styled(Input)`
@@ -55,11 +74,11 @@ export const SubmitInput = styled(Input)`
   font-size: 20px;
   font-weight: 700;
   color: #fff;
-  background-color: #db1313;
+  background-color: ${primaryButtonbg};
   cursor: pointer;
 
   &:hover {
-    background-color: #bd1414;
+    background-color: ${primaryButtonOnHover};
   }
 `;
 
@@ -67,7 +86,7 @@ export const Separator = styled.div`
   align-items: center;
   text-align: center;
   margin: 20px 16px;
-  border-bottom: 1px solid #dadde1;
+  border-bottom: 1px solid ${separator};
   display: flex;
 `;
 
@@ -82,13 +101,13 @@ export const CreateAccountLink = styled.div`
     padding: 20px;
     font-size: 20px;
     font-weight: 700;
-    border: 1px solid #dddfe2;
+    border: 1px solid ${border};
     border-radius: 6px;
-    background-color: #42b72a;
+    background: ${secondaryButtonbg};
     color: #fff;
 
     &:hover {
-      background-color: #399e24;
+      background-color: ${secondaryButtonOnHover};
     }
   }
 `;

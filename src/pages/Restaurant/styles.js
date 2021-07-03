@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
+const primary = (props) => props.theme.colors.primary;
+const background = (props) => props.theme.background.secondary;
+const separator = (props) => props.theme.form.separator;
+
 export const Container = styled.div`
-  color: #000;
+  color: ${primary};
   margin: 0 auto;
 
   strong,
   h1 {
-    color: #000;
+    color: inherit;
     font-weight: 300;
   }
 
@@ -30,7 +34,7 @@ export const Main = styled.div`
     flex-direction: column;
 
     .content {
-      background: #fff;
+      background: ${background};
       /* text-align: center; */
 
       .imagens-pequenas {
@@ -39,7 +43,7 @@ export const Main = styled.div`
     }
 
     .reservation-bg {
-      background: #fff;
+      background: ${background};
       height: fit-content;
 
       @media only screen and (min-width: 768px) {
@@ -51,7 +55,7 @@ export const Main = styled.div`
   }
 
   .ratings {
-    background: #fff;
+    background: ${background};
   }
 
   @media only screen and (min-width: 768px) {
@@ -83,6 +87,6 @@ export const Separator = styled.div`
   align-items: center;
   text-align: center;
   margin: 20px 40px;
-  border-bottom: 1px solid #dadde1;
+  border-bottom: 1px solid ${separator};
   display: flex;
 `;

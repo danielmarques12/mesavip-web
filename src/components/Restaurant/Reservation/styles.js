@@ -1,19 +1,18 @@
 import styled from 'styled-components';
 
 const Padding = 'padding: 10px 20px 0px 20px;';
+const background = (props) => props.theme.background.secondary;
+const primaryButtonbg = (props) => props.theme.form.primaryButton.background;
+const primaryButtonOnHover = (props) => props.theme.form.primaryButton.onHover;
 
 export const Container = styled.div`
-  background: #fff;
+  background: ${background};
   margin: 0 auto;
   font-size: 17px;
   ${Padding}
   width: 320px;
   height: 430px;
   border-radius: 10px;
-
-  button:hover {
-    background: #be0a0a;
-  }
 `;
 
 export const AvailableHours = styled.div`
@@ -43,13 +42,17 @@ export const Select = styled.select`
 `;
 
 export const Button = styled.button`
-  background: #db1313;
+  background: ${primaryButtonbg};
   padding: 8px;
   border-radius: 30px;
   border: 1px solid transparent;
   color: #fff;
   font-size: 18px;
   font-weight: 600;
-  width: 90%;
+  width: 100%;
   height: 65px;
+
+  &:hover {
+    background: ${primaryButtonOnHover};
+  }
 `;

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const primary = (props) => props.theme.colors.primary;
+
 export const Container = styled.div`
   color: #000;
   margin: 0 auto;
@@ -7,6 +9,7 @@ export const Container = styled.div`
   text-align: center;
 
   h1 {
+    color: ${primary};
     font-size: 20px;
     margin: 20px 0;
   }

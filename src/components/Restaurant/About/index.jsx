@@ -17,10 +17,10 @@ export default function About(props) {
           </p>
         </div>
         <Contact>
-          <p>
+          <p className="phone">
             <FaPhoneAlt /> {restaurant.phone}
           </p>
-          <p>
+          <p className="site">
             <FaGlobe />
             <a href={restaurant.site} target="_blank" rel="noreferrer">
               Restaurant site

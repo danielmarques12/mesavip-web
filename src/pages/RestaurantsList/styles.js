@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const primary = (props) => props.theme.colors.primary;
+const background = (props) => props.theme.background.secondary;
+const onHover = (props) => props.theme.onHover.primary;
+
 export const Container = styled.div`
   text-align: center;
   margin: 0 auto;
@@ -10,7 +14,7 @@ export const Container = styled.div`
   h3 {
     font-size: 17px;
     text-align: left;
-    color: #000000;
+    color: ${primary};
     margin: 10px 0;
   }
 `;
@@ -22,7 +26,7 @@ export const RestaurantList = styled.div`
 `;
 
 export const RestaurantCard = styled.div`
-  background: #fff;
+  background: ${background};
   width: 283px;
   height: 235px;
   padding: 7px;
@@ -32,11 +36,13 @@ export const RestaurantCard = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: #f5f6f8;
+    background: ${onHover};
   }
 `;
 
 export const Product = styled.div`
+  color: ${primary};
+
   img {
     width: 265px;
     height: 140px;
@@ -45,7 +51,6 @@ export const Product = styled.div`
 
   .div-produto-titulo-e-nota {
     text-decoration: none;
-    color: #000000;
     font-weight: 300;
     font-size: 16px;
     margin: 0 3px;
@@ -72,7 +77,6 @@ export const Product = styled.div`
 `;
 
 export const ProductDescription = styled.div`
-  color: #000000;
   font-size: 14px;
   font-weight: 300;
   display: flex;

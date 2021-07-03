@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+const primary = (props) => props.theme.colors.primary;
+const separator = (props) => props.theme.separator;
+
 const Padding = 'padding: 20px 30px 0px 30px;';
 
 export const Container = styled.div`
@@ -44,7 +47,7 @@ export const NumberOfComments = styled.div`
 
   span {
     margin-left: 3px;
-    color: #53565a;
+    color: ${primary};
     font-size: 16px;
   }
 
@@ -83,5 +86,5 @@ export const Comment = styled.div`
 export const Separator = styled.div`
   margin-bottom: 20px;
   padding: 0 30px;
-  border: 0.1px solid rgba(0, 0, 0, 0.0275);
+  border: 0.1px solid ${separator};
 `;

@@ -5,8 +5,12 @@ const shadow = `--tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
 box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
 var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);`;
 
+const background = (props) => props.theme.background.secondary;
+const primary = (props) => props.theme.colors.primary;
+const onHover = (props) => props.theme.onHover.primary;
+
 export const Nav = styled.nav`
-  background: #fff;
+  background: ${background};
   overflow: hidden;
   ${shadow}
 
@@ -49,6 +53,18 @@ export const Nav = styled.nav`
       margin-left: 10px;
     }
 
+    .switch-theme {
+      margin: 0 25px;
+
+      .switch-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 20;
+      }
+    }
+
     li {
       cursor: pointer;
       list-style: none;
@@ -62,7 +78,7 @@ export const Nav = styled.nav`
       a {
         text-decoration: none;
         font-size: 16px;
-        color: #000;
+        color: ${primary};
         font-weight: 400;
       }
 
@@ -82,7 +98,7 @@ export const Nav = styled.nav`
     padding: 10px 5px;
 
     &:hover {
-      background: #f7f7f7;
+      background: ${onHover};
     }
   }
 
@@ -96,13 +112,13 @@ export const Nav = styled.nav`
       width: 160px;
       height: 55px;
       border-radius: 4px;
-      border: 2px solid #000;
-      color: #000;
-      background: #fff;
+      border: 2px solid ${primary};
+      color: ${primary};
+      background: ${background};
     }
 
     button:hover {
-      background: #f3f6fa;
+      background: ${onHover};
     }
 
     li:nth-child(1) {
@@ -167,10 +183,4 @@ export const Nav = styled.nav`
       }
     }
   }
-`;
-
-export const Separator = styled.div`
-  margin-bottom: 20px;
-  padding: 0 30px;
-  border: 0.1px solid rgba(0, 0, 0, 0.0275);
 `;

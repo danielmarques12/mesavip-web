@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const Padding = 'padding: 10px 120px 0px 30px;';
+const primary = (props) => props.theme.colors.primary;
+const onHover = (props) => props.theme.onHover.primary;
 
 export const Container = styled.div`
   text-align: center;
@@ -63,17 +65,23 @@ export const Contact = styled.div`
     }
 
     a {
-      padding: 15px;
-      border: 1px solid black;
+      padding: 15px 15px 15px 15px;
+      border: 1px solid ${primary};
       border-radius: 5px;
       text-decoration: none;
-      color: #000;
+      color: ${primary};
       font-weight: bold;
     }
 
     a:hover {
-      background: #f3f6fa;
-      color: #000;
+      background: ${onHover};
+      color: ${primary};
+    }
+  }
+
+  .site {
+    svg {
+      margin-left: 20px;
     }
   }
 

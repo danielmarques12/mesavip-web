@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 const Padding = 'padding: 10px 10px 0px 10px;';
+const primary = (props) => props.theme.colors.primary;
+const background = (props) => props.theme.background.secondary;
 
 export const Container = styled.div`
-  background: #fff;
+  background: ${background};
   border-radius: 10px;
 `;
 
