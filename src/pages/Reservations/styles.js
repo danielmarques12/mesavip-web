@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 const primary = (props) => props.theme.colors.primary;
+const tableHeader = (props) => props.theme.table.header;
+const tablePrimary = (props) => props.theme.table.primary;
+const tableSecondary = (props) => props.theme.table.secondary;
 
 export const Container = styled.div`
-  color: #000;
+  color: ${primary};
   margin: 0 auto;
   display: table;
   text-align: center;
@@ -16,20 +19,21 @@ export const Container = styled.div`
 
   table {
     margin: 0 auto 50px auto;
+    width: 100%;
   }
 
   th {
-    background-color: #808692;
+    background-color: ${tableHeader};
     color: #fff;
   }
 
   tr {
     &:nth-child(even) {
-      background: #fff;
+      background: ${tablePrimary};
     }
 
     &:nth-child(odd) {
-      background: #e6e7e9;
+      background: ${tableSecondary};
     }
   }
 
@@ -37,5 +41,6 @@ export const Container = styled.div`
   td {
     border-collapse: collapse;
     padding: 15px 30px;
+    text-align: left;
   }
 `;

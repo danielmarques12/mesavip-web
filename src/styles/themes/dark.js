@@ -2,6 +2,10 @@ export default {
   title: 'dark',
   separator: '#3b3f42',
   logo: 'https://bit.ly/2UjKlSb',
+  headerShadow: `--tw-shadow: 0 4px 1.25px -1px rgba(255, 255, 255, 0.1),
+  0 2px 1px -1px rgba(255, 255, 255, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+  var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);`,
 
   colors: {
     primary: '#fff',
@@ -38,5 +42,11 @@ export default {
       background: '#347d39',
       onHover: '#3e8f42',
     },
+  },
+
+  table: {
+    header: '#18181d',
+    primary: '#2b2c34',
+    secondary: '#3c3d4b',
   },
 };
