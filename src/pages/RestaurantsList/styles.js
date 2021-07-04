@@ -8,7 +8,6 @@ export const Container = styled.div`
   text-align: center;
   margin: 0 auto;
   width: 60.94%;
-  height: 780px;
   display: table;
 
   h3 {

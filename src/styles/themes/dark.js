@@ -43,10 +43,4 @@ export default {
       onHover: '#3e8f42',
     },
   },
-
-  table: {
-    header: '#18181d',
-    primary: '#2b2c34',
-    secondary: '#3c3d4b',
-  },
 };
