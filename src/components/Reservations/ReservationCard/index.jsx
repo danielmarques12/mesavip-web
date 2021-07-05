@@ -6,17 +6,16 @@ import {
   MainWrapper,
   Date,
   InfoWrapper,
-  NameAndLocation,
-  TimeAndAvgRate,
-  Nota,
+  NameAndRate,
+  Rate,
+  Time,
   Address,
   Separator,
-  ButtonsWrapper,
   Button,
 } from './styles';
 import { api } from '../../../services/api';
 
-export default function ReservationCard({ reservation }) {
+export default function ReservationCard({ reservation, past }) {
   const handleClick = (reservation_id) =>
     api
       .delete(`reservations/cancel/${reservation_id}`)
@@ -24,38 +23,42 @@ export default function ReservationCard({ reservation }) {
 
   return (
     <>
-      <Container key={reservation.id}>
+      <Container>
         <MainWrapper>
           <Date>
-            <h2>23</h2>
-            <span>November</span>
+            <h2>{reservation.day}</h2>
+            <span>{reservation.month}</span>
           </Date>
 
           <InfoWrapper>
-            <NameAndLocation>
-              <span>Burgen Queen - São Paulo</span>
-            </NameAndLocation>
-
-            <TimeAndAvgRate>
-              <span>20:30 PM</span>
-              <Nota>
+            <NameAndRate>
+              <span>{reservation.restaurant}</span>
+              <Rate>
                 <FaStar />
-                <span>4.2</span>
-              </Nota>
-            </TimeAndAvgRate>
+                <span>{reservation.avg_rating}</span>
+              </Rate>
+            </NameAndRate>
 
-            <Address>
-              <span>Rua Benedita Galdino Coelho - 84</span>
-            </Address>
+            <Time>
+              <span>{reservation.time}</span>
+            </Time>
+
+            {reservation.address ? (
+              <Address>
+                <span>{reservation.city}</span>
+                <span>{reservation.address}</span>
+              </Address>
+            ) : null}
           </InfoWrapper>
         </MainWrapper>
 
         <Separator />
 
-        <ButtonsWrapper>
+        {past ? (
+          <Button> Rate reservation </Button>
+        ) : (
           <Button onClick={() => handleClick(reservation.id)}>Cancel</Button>
-          <Button>Rate</Button>
-        </ButtonsWrapper>
+        )}
       </Container>
     </>
   );

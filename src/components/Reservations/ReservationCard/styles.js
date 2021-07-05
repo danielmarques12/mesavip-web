@@ -27,7 +27,7 @@ export const MainWrapper = styled.div`
 export const Date = styled.div`
   background: ${backgroundPrimary};
   color: inherit;
-  width: 85px;
+  width: 115px;
   height: 78px;
   border-radius: 10px;
 
@@ -38,29 +38,26 @@ export const Date = styled.div`
   }
 
   span {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
   }
 `;
 
-export const InfoWrapper = styled.div``;
+export const InfoWrapper = styled.div`
+  width: 100%;
+`;
 
-export const NameAndLocation = styled.div`
+export const NameAndRate = styled.div`
   margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
 
   span {
     font-weight: 500;
   }
 `;
 
-export const TimeAndAvgRate = styled.div`
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  margin-top: 7.5px;
-`;
-
-export const Nota = styled.div`
+export const Rate = styled.div`
   display: flex;
   justify-content: space-between;
   color: #fb0;
@@ -70,23 +67,26 @@ export const Nota = styled.div`
   }
 `;
 
+export const Time = styled.div`
+  text-align: left;
+  font-size: 12px;
+  margin-top: 5px;
+`;
+
 export const Address = styled.div`
-  margin-top: 12.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
+  margin-top: 5px;
   font-size: 11px;
 `;
 
 export const Separator = styled.div`
   width: 290px;
-  margin: 0 auto 13.5px auto;
-  padding: 0 3vv0px;
+  margin: 0 auto 8.5px auto;
+  padding: 0 30px;
   border: 0.25px solid ${separator};
-`;
-
-export const ButtonsWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 1.125rem;
-  height: 27px;
 `;
 
 export const Button = styled.button`
@@ -94,8 +94,8 @@ export const Button = styled.button`
   color: ${primary};
   border: 1px solid lightgrey;
   border-radius: 5px;
-  width: 100px;
-  height: 27px;
+  width: 150px;
+  height: 35px;
   font-size: 14px;
 
   &:hover {

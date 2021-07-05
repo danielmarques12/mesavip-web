@@ -20,7 +20,7 @@ export const Container = styled.div`
 
 export const RestaurantList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(283px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(283px, 1fr));
   margin: 0 auto;
 `;
 

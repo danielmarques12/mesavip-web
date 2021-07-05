@@ -18,8 +18,7 @@ export const Container = styled.div`
 
 export const ReservationsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
 
   h1 {
     color: ${primary};

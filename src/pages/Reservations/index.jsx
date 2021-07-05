@@ -30,7 +30,7 @@ export default function Reservations() {
 
       <ReservationsWrapper>
         {pastReservations.map((reservation) => (
-          <ReservationCard reservation={reservation} />
+          <ReservationCard reservation={reservation} past />
         ))}
       </ReservationsWrapper>
     </Container>
