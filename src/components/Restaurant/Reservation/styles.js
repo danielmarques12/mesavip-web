@@ -49,7 +49,7 @@ export const Button = styled.button`
   color: #fff;
   font-size: 18px;
   font-weight: 600;
-  width: 100%;
+  width: 275px;
   height: 65px;
 
   &:hover {

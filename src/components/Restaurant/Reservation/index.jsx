@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import Modal from 'react-modal';
 import DayPicker from 'react-day-picker';
 import { Container, Hours, Select, AvailableHours, Button } from './styles';
 import { api } from '../../../services/api';
@@ -9,8 +10,10 @@ export default function Agendamento(props) {
   const [hours, setHours] = useState([]);
   const [selectedHour, setSelectedHour] = useState(0);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const { restaurant_id } = props;
   const today = new Date();
+  const modalBackgroundColor = JSON.parse(localStorage.getItem('light'));
 
   const lastAllowedMonth = () => {
     const date = new Date();
@@ -39,8 +42,36 @@ export default function Agendamento(props) {
       time: selectedHour,
       date: selectedDate.toDateString(),
     });
+    setModalIsOpen(true);
+  };
+
+  const handleModalClick = () => {
     document.location.reload();
-    // getAvailableHours(selectedDate);
+  };
+
+  const modalStyles = {
+    content: {
+      background: modalBackgroundColor.background.primary,
+      color: modalBackgroundColor.colors.primary,
+      // overflowY: 'hidden',
+      textAlign: 'center',
+      top: '390px',
+      bottom: '390px',
+      left: '710px',
+      right: '710px',
+      borderRadius: '10px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+      gap: '2rem',
+      fontSize: '15px',
+    },
+
+    overlay: {
+      background:
+        'linear-gradient(rgba(255, 255, 255, 0.5), rgba(122, 122, 122, 0.5))',
+    },
   };
 
   const modifiers = {
@@ -81,6 +112,17 @@ export default function Agendamento(props) {
           </Select>
         </Hours>
       </AvailableHours>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        shouldCloseOnOverlayClick={false}
+        style={modalStyles}
+        preventScroll
+      >
+        <h2>Reservation registered successfully</h2>
+        <Button onClick={handleModalClick}>Confirm</Button>
+      </Modal>
 
       <Button type="submit" onClick={handleSubmit}>
         Reservate
