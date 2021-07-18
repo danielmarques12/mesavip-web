@@ -43,10 +43,7 @@ export const Nav = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .logo {
-      margin-left: 10px;
-    }
+    text-align: center;
 
     .switch-theme {
       margin: 0 25px;
@@ -64,10 +61,13 @@ export const Nav = styled.nav`
       cursor: pointer;
       list-style: none;
       display: none;
+      border-bottom: 1px solid #9087872f;
+      width: 100%;
 
       &:first-child {
         margin-right: auto;
         display: block;
+        text-align: left;
       }
 
       a {
@@ -80,6 +80,10 @@ export const Nav = styled.nav`
       .text {
         font-size: 18px;
       }
+    }
+
+    .switch-theme {
+      margin: 5px 0 0px 5px;
     }
   }
 
@@ -98,16 +102,14 @@ export const Nav = styled.nav`
   }
 
   .buttons {
-    margin-bottom: 25px;
-    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 5px;
 
     button {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 400;
-      width: 160px;
-      height: 55px;
-      border-radius: 4px;
-      border: 2px solid ${primary};
+      border: 0;
       color: ${primary};
       background: ${background};
     }
@@ -151,8 +153,19 @@ export const Nav = styled.nav`
         --tw-shadow: 0;
         box-shadow: 0;
 
+        .logo {
+          margin-left: 10px;
+        }
+
         li {
           display: block;
+          width: inherit;
+          border-bottom: 0;
+        }
+
+        .switch-theme {
+          margin-right: 20px;
+          margin-left: 15px;
         }
       }
 
@@ -162,10 +175,21 @@ export const Nav = styled.nav`
 
       .buttons {
         margin-right: 12px;
-        margin-left: 30px;
+        margin-left: 15px;
         margin-top: 0;
         margin-bottom: 0;
         display: flex;
+
+        button {
+          font-size: 17px;
+          font-weight: 400;
+          width: 160px;
+          height: 55px;
+          border-radius: 4px;
+          border: 2px solid ${primary};
+          color: ${primary};
+          background: ${background};
+        }
 
         li:nth-child(1) {
           margin-bottom: 0;

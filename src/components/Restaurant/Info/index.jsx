@@ -11,6 +11,7 @@ export default function Something(props) {
       <Info>
         <Details>
           <h1> {restaurant.name} </h1>
+          <span> Hours of operation: {restaurant.operation_hours} </span>
           <p>
             {restaurant.bairro} - {restaurant.cidade} - {restaurant.estado}
           </p>

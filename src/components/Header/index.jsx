@@ -5,8 +5,7 @@ import { FaGithub, FaBars, FaTimes } from 'react-icons/fa';
 import { ThemeContext } from 'styled-components';
 import Switch from 'react-switch';
 import { Nav } from './styles';
-import ButtonsGuest from './ButtonsGuest';
-import ButtonsUser from './ButtonsUser';
+import Button from './Button';
 import { isAuthenticated } from '../../services/auth';
 
 export default function Header({ toggleTheme }) {
@@ -61,22 +60,26 @@ export default function Header({ toggleTheme }) {
             </li>
 
             <li>
-              <ButtonsUser />
+              <Button text="Sign out" href="/" signout />
             </li>
           </>
         ) : (
-          <li>
-            <ButtonsGuest />
-          </li>
+          <>
+            <li>
+              <Button text="Sign in" href="/signin" />
+            </li>
+            <li>
+              <Button text="Sign up" href="/signup" />
+            </li>
+          </>
         )}
 
         <li className="switch-theme">
           <Switch
             onChange={toggleTheme}
             checked={title === 'dark'}
-            height={40}
+            height={35}
             width={80}
-            // borderRadius={25}
             handleDiameter={10}
             checkedIcon={false}
             uncheckedIcon={false}

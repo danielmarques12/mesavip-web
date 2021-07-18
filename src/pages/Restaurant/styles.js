@@ -12,6 +12,7 @@ export const Container = styled.div`
   h1 {
     color: inherit;
     font-weight: 300;
+    margin-bottom: 10px;
   }
 
   .banner {
